@@ -1,5 +1,4 @@
 _G.autofarm = true
-local undynehealth = game:GetService("Workspace").Undyne.Humanoid.Health
 local undynewarp = workspace.Warps.UndyneWarp
 local humleftleg = game.Players.LocalPlayer.Character["Left Leg"]
 spawn(function ()
@@ -8,6 +7,7 @@ spawn(function ()
         wait(0.3)
         firetouchinterest(humleftleg, undynewarp, 1)
         wait(1)
+        local undynehealth = game:GetService("Workspace").Undyne.Humanoid.Health
         undynehealth = 0
         wait(4)
      end
