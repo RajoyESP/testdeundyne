@@ -14,11 +14,10 @@ FarmSection:NewToggle("Undyne Auto Farm (VIP SERVER)", "Farmea Automaticamente a
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2263.13721, -53.7849808, -246.424011)
         wait(0.3)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2264.13721, -53.7849808, -246.424011)
-        wait(0.75)
+        wait(0.85)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1337.59851, 26.2199936, 2333.09375)
         wait(8)
         game:GetService("Workspace").Undyne.Humanoid.Health = 0
-        print("Toggle On")
         wait(4)
         end
     else
@@ -27,11 +26,10 @@ FarmSection:NewToggle("Undyne Auto Farm (VIP SERVER)", "Farmea Automaticamente a
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2263.13721, -53.7849808, -246.424011)
         wait(0.3)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2264.13721, -53.7849808, -246.424011)
-        wait(0.75)
+        wait(0.85)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1337.59851, 26.2199936, 2333.09375)
         wait(8)
         game:GetService("Workspace").Undyne.Humanoid.Health = 0
-        print("Toggle Off")
         wait(4)
         end
     end
