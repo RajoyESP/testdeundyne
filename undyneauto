@@ -70,10 +70,10 @@ TPSection:NewButton("Testing Room", "Te hace TP al Testing Room donde no se lo q
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3529.00049, 43710.125, 642.852295)    -- TESTING ROOM
 end)
 TPSection:NewButton("Jevil", "Te hace TP al sitio para ir a Jevil 3D", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(665.540405, 45.5433502, -818.711853)    -- JEVIL 3D
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(664.891357, 45.5496101, -818.098206, 0.038511876, -0.000368354435, 0.999258101, -1.18454274e-07, 0.99999994, 0.000368633366, -0.999258161, -1.43368534e-05, 0.0385118723)    -- JEVIL 3D
 end)
 TPSection:NewButton("Mew Mew", "Te hace TP al sitio para ir a Mew Mew", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12, 10.5999994, -2)    -- JEVIL 3D
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12, 10.5999994, -2)    -- MEW MEW
 end)
 
 --BADGE SECTION
