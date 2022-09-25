@@ -7,7 +7,7 @@ local UT3DBBTab = Window:NewTab("UT3DBB")
 --FARM SECTION
 local FarmSection = UT3DBBTab:NewSection("Undyne Farm")
 
-FarmSection:NewToggle("Undyne Auto Farm", "Farmea Automaticamente a Undyne", function(state)
+FarmSection:NewToggle("Undyne Auto Farm (VIP SERVER)", "Farmea Automaticamente a Undyne", function(state)
     if state then
         _G.autoFarm = true;
         while _G.autoFarm == true do
