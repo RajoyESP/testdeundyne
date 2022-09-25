@@ -58,6 +58,38 @@ PlayerSection:NewSlider("Salto", "Aumento / Disminucion de salto", 250, 50, func
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 
+--TP SECTION
+local TPSection = UT3DBBTab:NewSection("TP")
+TPSection:NewButton("Error Room", "Te hace TP al Error Room donde se encuentra el warp a Error Sans", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15799.9219, 25861.7676, 575.419556) --ERROR ROOM
+end)
+TPSection:NewButton("Error Hall", "Te hace TP al Error Hall donde se pelea contra Error Sans", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12344.8389, 294.124969, 2240.30762)    -- ERROR HALL
+end)
+TPSection:NewButton("Testing Room", "Te hace TP al Testing Room donde no se lo que se hace", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3529.00049, 43710.125, 642.852295)    -- TESTING ROOM
+end)
+TPSection:NewButton("Jevil", "Te hace TP al sitio para ir a Jevil 3D", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(665.540405, 45.5433502, -818.711853)    -- JEVIL 3D
+end)
+TPSection:NewButton("Mew Mew", "Te hace TP al sitio para ir a Mew Mew", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12, 10.5999994, -2)    -- JEVIL 3D
+end)
+
+--BADGE SECTION
+local BadgeSection = UT3DBBTab:NewSection("Obtener Badges")
+BadgeSection:NewButton("Jevil", "Te da el Badge de Jevil, para obtener el Devil's Knife", function()
+    local args = {
+        [1] = "Chaos"
+     }
+     workspace.GameScripts.Giver.Badger:FireServer(unpack(args))
+end)
+BadgeSection:NewButton("Mew Mew", "Te da el Badge de Mew Mew, para obtener el MewMew", function()
+    local args = {
+        [1] = "MewMew"
+     }
+     workspace.GameScripts.Giver.Badger:FireServer(unpack(args))
+end)
 
 --TOGGLE SECTION
 local ToggleSection = UT3DBBTab:NewSection("Toggle")
