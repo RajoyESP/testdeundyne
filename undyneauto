@@ -43,7 +43,7 @@ InfiniteSection:NewButton("Infinite Yield", "Te pone el Infinite Yield, pedazo d
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
-InfiniteSection:NewButton("UT3DBB Bypass", "Te pone el ut3dbb, pedazo de gordo", function()
+InfiniteSection:NewButton("UT3DBB Bypass", "Te pone el ut3dbb bypass, pedazo de gordo", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbbbypass"))()
 end)
 
