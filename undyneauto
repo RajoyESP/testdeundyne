@@ -1,14 +1,68 @@
-_G.autofarm = true
-local undynewarp = workspace.Warps.UndyneWarp
-local humleftleg = game.Players.LocalPlayer.Character["Left Leg"]
-spawn(function ()
-    while _G.autofarm == true do
-        firetouchinterest(humleftleg, undynewarp, 0)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("GUI re chetarda mano", "Serpent")
+
+--UT3DBB TAB
+local UT3DBBTab = Window:NewTab("UT3DBB")
+
+--FARM SECTION
+local FarmSection = UT3DBBTab:NewSection("Undyne Farm")
+
+FarmSection:NewToggle("Undyne Auto Farm", "Farmea Automaticamente a Undyne", function(state)
+    if state then
+        _G.autoFarm = true;
+        while _G.autoFarm == true do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2263.13721, -53.7849808, -246.424011)
         wait(0.3)
-        firetouchinterest(humleftleg, undynewarp, 1)
-        wait(1)
-        local undynehealth = game:GetService("Workspace").Undyne.Humanoid.Health
-        undynehealth = 0
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2264.13721, -53.7849808, -246.424011)
+        wait(0.75)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1337.59851, 26.2199936, 2333.09375)
+        wait(8)
+        game:GetService("Workspace").Undyne.Humanoid.Health = 0
+        print("Toggle On")
         wait(4)
-     end
+        end
+    else
+        _G.autoFarm = false;
+        while _G.autoFarm == true do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2263.13721, -53.7849808, -246.424011)
+        wait(0.3)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2264.13721, -53.7849808, -246.424011)
+        wait(0.75)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1337.59851, 26.2199936, 2333.09375)
+        wait(8)
+        game:GetService("Workspace").Undyne.Humanoid.Health = 0
+        print("Toggle Off")
+        wait(4)
+        end
+    end
+end)
+
+--INFINITE YIELD
+local InfiniteSection = UT3DBBTab:NewSection("Infinite Yield")
+InfiniteSection:NewButton("Infinite Yield", "Te pone el Infinite Yield, pedazo de gordo", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+InfiniteSection:NewButton("UT3DBB Bypass", "Te pone el ut3dbb, pedazo de gordo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbbbypass"))()
+end)
+
+--PLAYER SECTION
+local PlayerSection = UT3DBBTab:NewSection("Jugador")
+
+PlayerSection:NewSlider("Velocidad", "Aumento / Disminucion de velocidad", 100, 16, function(s) -- 100 (MaxValue) | 16 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSection:NewSlider("Salto", "Aumento / Disminucion de salto", 250, 50, function(s) -- 250 (MaxValue) | 50 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+--TOGGLE SECTION
+local ToggleSection = UT3DBBTab:NewSection("Toggle")
+
+--TOGGLE UI
+ToggleSection:NewKeybind("Mostrar / Ocultar", "Muestra y Oculta la GUI", Enum.KeyCode.F, function()
+	Library:ToggleUI()
 end)
