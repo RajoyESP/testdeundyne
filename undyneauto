@@ -16,7 +16,7 @@ FarmSection:NewToggle("Undyne Auto Farm (VIP SERVER)", "Farmea Automaticamente a
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2264.13721, -53.7849808, -246.424011)
         wait(0.85)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1337.59851, 26.2199936, 2333.09375)
-        wait(8)
+        wait(1)
         game:GetService("Workspace").Undyne.Humanoid.Health = 0
         wait(4)
         end
@@ -28,7 +28,7 @@ FarmSection:NewToggle("Undyne Auto Farm (VIP SERVER)", "Farmea Automaticamente a
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2264.13721, -53.7849808, -246.424011)
         wait(0.85)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1337.59851, 26.2199936, 2333.09375)
-        wait(8)
+        wait(1)
         game:GetService("Workspace").Undyne.Humanoid.Health = 0
         wait(4)
         end
