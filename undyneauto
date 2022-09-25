@@ -48,6 +48,11 @@ end)
 InfiniteSection:NewButton("UT3DBB Bypass", "Te pone el ut3dbb bypass, pedazo de gordo", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbbbypass"))()
 end)
+InfiniteSection:NewButton("Remote Spy", "Creditos a exx#9394", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+end)
+
+
 
 --PLAYER SECTION
 local PlayerSection = UT3DBBTab:NewSection("Jugador")
