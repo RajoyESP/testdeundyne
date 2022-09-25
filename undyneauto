@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("GUI re chetarda mano", "Serpent")
+local Window = Library.CreateLib("GUI re chetarda mano", "Synapse")
 
 --UT3DBB TAB
 local UT3DBBTab = Window:NewTab("UT3DBB")
