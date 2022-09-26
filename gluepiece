@@ -1,0 +1,93 @@
+--CREATE LIBRARY
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+--WINDOW TAB
+local Window = Library.CreateLib("Glue Piece", "Serpent")
+
+--NDEAH TAB
+local NdeahTab = Window:NewTab("Ndeahh")
+
+--TPs SECTION
+local TpsSection = NdeahTab:NewSection("TPs")
+
+--TPs
+TpsSection:NewButton("Isla Verde", "Te hace TP a una isla que solo tiene arboles y casas, como la mayoria de las islas", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1722.38416, 13.9431086, 2260.35791)
+end)
+TpsSection:NewButton("Isla de Hielo", "Te hace TP a la Isla de Hielo, perro waton!!1!", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-438.731232, 14.4715462, 1843.58875)
+end)
+TpsSection:NewButton("Isla de Sans", "Te hace TP a la Isla de Sans, bad tiem", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(430.463287, 14.4901772, 2220.34106)
+end)
+TpsSection:NewButton("Isla de la Tumba", "Te hace TP a a una tumba??", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(26.8285275, 15.4854536, 568.471802)
+end)
+TpsSection:NewButton("Judgement Hall", "Te hace TP al mismisimo Judgement Hall (la sala del juicio)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(497.447144, 13.0626507, 373.990234)
+end)
+TpsSection:NewButton("Spawn", "Te hace TP al Spawn", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-94.5507584, 14.4999971, -5.11975765)
+end)
+TpsSection:NewButton("Isla de los Slimes", "Te hace TP a la isla de los slimes conejos", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-48.9012833, 14.4901772, -978.251099)
+end)
+TpsSection:NewButton("Isla de los Gusanos de Seda", "Te hace TP a la isla de los gusanos de mierda", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-618.636047, 14.4982777, -1710.14746)
+end)
+TpsSection:NewButton("Isla Desertada", "Te hace TP al desierto", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1725.92151, 14.4998016, -1812.51465)
+end)
+TpsSection:NewButton("Isla Flotante", "Te hace TP a la isla de don chincheton", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1721.16821, 439.482941, -1178.59253)
+end)
+TpsSection:NewButton("Isla de la cascada", "Te hace TP a la isla de la cascada con el pato hijoeputa", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2520.44946, 14.4947586, -243.824844)
+end)
+TpsSection:NewButton("Isla de los Cute Noobs", "Te hace TP a la isla de los Cute Noob??", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2552.83472, 20.5000095, 843.108582)
+end)
+TpsSection:NewButton("Coliseo", "Te hace TP al Coliseo (aqui esta el cabron de la yoru)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1916.5647, 18.487093, 1481.9906)
+end)
+TpsSection:NewButton("Isla del Medio", "Te hace TP a la isla del medio", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-951.113037, 14.4999971, 287.861633)
+end)
+TpsSection:NewButton("Isla de las frutas", "Te hace TP a la isla donde se compran frutas", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1135.46191, 16.4959602, -1022.13409)
+end)
+
+--OTHER SECTION
+local OtherSection = NdeahTab:NewSection("Other")
+
+--OTHER STUFF
+OtherSection:NewButton("Compra 1 frutas", "Compra solo 1 fruta", function()
+    local args = {
+        [1] = "Random DF",
+        [2] = "Money"
+    }
+    game:GetService("ReplicatedStorage").RemoteEvent.Reset.Reset:FireServer(unpack(args))
+end)
+OtherSection:NewToggle("Comprar todas las frutas que puedas", "Facil para irte a banca rota", function(state)
+    if state then
+        _G.autoBuy = true;
+        while _G.autoBuy == true do
+        local args = {
+            [1] = "Random DF",
+            [2] = "Money"
+        }
+        game:GetService("ReplicatedStorage").RemoteEvent.Reset.Reset:FireServer(unpack(args))
+        wait(0.1)
+        end
+    else
+        _G.autoBuy = false;
+        while _G.autoBuy == true do
+        local args = {
+            [1] = "Random DF",
+            [2] = "Money"
+        }
+        game:GetService("ReplicatedStorage").RemoteEvent.Reset.Reset:FireServer(unpack(args))
+        wait(0.1)
+        end
+    end
+end)
