@@ -19,11 +19,7 @@ if game.PlaceId == 602853446 then
             wait(0.85)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1337.59851, 26.2199936, 2333.09375)
             wait(1)
-            game:GetService("Workspace").Undyne.Humanoid.Health = 5
-            wait(0.1)
             game:GetService("Workspace").Undyne.Humanoid.Health = 0
-            game:GetService("Workspace").Undyne.Config.Gold.Value = 1200000
-            game:GetService("Workspace").Undyne.Config.EXP.Value = 1200000
             wait(4)
             end
         else
@@ -35,11 +31,7 @@ if game.PlaceId == 602853446 then
             wait(0.85)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1337.59851, 26.2199936, 2333.09375)
             wait(1)
-            game:GetService("Workspace").Undyne.Humanoid.Health = 5
-            wait(0.1)
             game:GetService("Workspace").Undyne.Humanoid.Health = 0
-            game:GetService("Workspace").Undyne.Config.Gold.Value = 1200000
-            game:GetService("Workspace").Undyne.Config.EXP.Value = 1200000
             wait(4)
             end
         end
