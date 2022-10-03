@@ -1,0 +1,146 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "[✨50M EVENT!] ⚡ Tapping Legends X", IntroEnabled = false, IntroText = "RajoyESP's Productions", HidePremium = false, SaveConfig = true, ConfigFolder = "RajoyESPtest"})
+
+--Variables
+getgenv().autoTap = true
+getgenv().autoRebirth = true
+getgenv().autoHatch = true
+getgenv().selectedEgg = "Basic Egg"
+getgenv().selectedAmount = "1"
+
+--Tabs
+local AutoTab = Window:MakeTab({
+	Name = "Automate Stuff Tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local MiscTab = Window:MakeTab({
+	Name = "Miscellanious Tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local EggsTab = Window:MakeTab({
+	Name = "Hatching Tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local PlayerTab = Window:MakeTab({
+	Name = "Player Tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--Functions
+function autoTapper()
+    while getgenv().autoTap == true do
+        game:GetService("ReplicatedStorage").Remotes.Tap:FireServer()
+        wait(0.1)
+    end
+end
+
+
+
+function autoHatcher()
+	while getgenv().autoHatch == true do
+		game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(getgenv().selectedEgg,3)
+		wait(0.1)
+	end
+end	
+
+--Buttons
+MiscTab:AddButton({
+	Name = "Remote Spy",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+  	end    
+})
+
+--Toggles
+
+AutoTab:AddToggle({
+	Name = "Auto Tap",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autoTap = Value
+        autoTapper()
+	end    
+})
+
+AutoTab:AddToggle({
+	Name = "Auto Rebirth",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autoRebirth = Value
+        autoRebirther()
+	end    
+})
+
+EggsTab:AddToggle({
+	Name = "Auto Hatch",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autoHatch = Value
+        autoHatcher()
+	end    
+})
+
+--Dropdown
+
+EggsTab:AddDropdown({
+	Name = "Dropdown",
+	Default = "Basic Egg",
+	Options = {"Basic Egg", "Rare Egg", "Lava Egg", "Heaven Egg", "Hell Egg", "50M Spirit Egg", "50M Fancy Egg"},
+	Callback = function(Value)
+		getgenv().selectedEgg = Value
+		print(getgenv().selectedEgg)
+	end    
+})
+
+AutoTab:AddDropdown({
+	Name = "Dropdown",
+	Default = 1,
+	Options = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50},
+	Callback = function(Value)
+		getgenv().selectedAmount = Value
+		print(getgenv().selectedAmount)
+	end    
+})
+
+function autoRebirther()
+    while getgenv().autoRebirth == true do
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(getgenv().selectedAmount)
+        wait(0.1)
+    end
+end
+
+--Sliders
+PlayerTab:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 150,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "JumpPower",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "WalkSpeed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+OrionLib:Init()
