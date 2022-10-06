@@ -1,0 +1,125 @@
+local ts = game:GetService("TweenService")
+--tweens
+
+_G.farming = true
+local goal1 = {
+    CFrame = CFrame.new(1322.9281, 30, 2483.42749)
+}
+local goal2 = {
+    CFrame = CFrame.new(1321.93005, 30, 2358.92261)
+}
+local goal3 = {
+    CFrame = CFrame.new(1385.3335, 30, 2362.44434)
+}
+local goal4 = {
+    CFrame = CFrame.new(1375.55603, 30, 2483.04785)
+}
+local function size()
+    spawn(function()
+        if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then   
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").NeoAntiCheat:Destroy()
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").SizeChecker:Destroy()
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):FindFirstChild("poo").Massless = true
+            for i, v in pairs(game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):GetDescendants()) do
+                if v:IsA("Mesh") then
+                v:Destroy()
+                end
+            end
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):FindFirstChild("poo").Transparency = 0.7
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):FindFirstChild("poo").Size = Vector3.new(50,50,50)
+        end
+        print("ended")
+        while game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") do
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):FindFirstChild("poo").Size = Vector3.new(1,1,1)
+            wait()
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):FindFirstChild("poo").Size = Vector3.new(10,10,10)
+            wait()
+        end
+    end)
+end
+local function tween()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+    local tween1 = ts:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), goal1)
+    local tween2 = ts:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), goal2)
+    local tween3 = ts:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), goal3)
+    local tween4 = ts:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), goal4)
+    tween1:Play()
+    local d1
+    local d2
+    local d3
+    local d4
+    d1 = tween1.Completed:Connect(function()
+        tween2:Play()
+        if not _G.farming then
+            print("NOOOOO")
+            d1:disconnect()
+            d2:disconnect()
+            d3:disconnect()
+            d4:disconnect()
+        end
+    end)
+    d2 = tween2.Completed:Connect(function()
+        tween3:Play()
+        if not _G.farming then
+            print("NOOOOO")
+            d1:disconnect()
+            d2:disconnect()
+            d3:disconnect()
+            d4:disconnect()
+        end
+    end)
+    d3 = tween3.Completed:Connect(function()
+        tween4:Play()
+        if not _G.farming then
+            print("NOOOOO")
+            d1:disconnect()
+            d2:disconnect()
+            d3:disconnect()
+            d4:disconnect()
+        end
+    end)
+    d4 = tween4.Completed:Connect(function()
+    	tween1:Play()
+    	if not _G.farming then
+            print("NOOOOO")
+            d1:disconnect()
+            d2:disconnect()
+            d3:disconnect()
+            d4:disconnect()
+        end
+    end)
+end
+while _G.farming do wait()
+    for i = 1, 10 do
+    firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+    wait(0.1)
+    firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+    end
+    local handle = game.Players.LocalPlayer.Backpack:FindFirstChild("Devils Knife")
+    handle.Parent = game.Players.LocalPlayer.Character
+    
+    repeat wait() print("e") until workspace:FindFirstChild("Undyne")
+    
+    if handle then
+        handle.Handle.Name = "poo"
+        handle.poo.ManualWeld:Destroy()
+        game.Players.LocalPlayer.Character["Right Arm"].RightGrip:Destroy()
+        handle.poo.Anchored = true
+    end
+    local root = workspace.Undyne.HumanoidRootPart
+    wait(1)
+    tween()
+    size()
+    while game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") and root do
+        handle.poo.CFrame = root.CFrame - Vector3.new(0,0,2)
+        handle:Activate()
+        wait()
+    end
+    wait(5)
+    local args = {
+        [1] = "Save"
+    }
+    
+    workspace.UserDataStorage.User_1970273125.Save:FireServer(unpack(args))
+
+end
