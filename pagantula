@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEnabled = true, IntroText = "😎😎😎", HidePremium = false, SaveConfig = true, ConfigFolder = "Porongatest"})
+local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEnabled = true, IntroText = "RajoyESP's Productions", HidePremium = false, SaveConfig = true, ConfigFolder = "Pepinillotest"})
 
 getgenv().autofighthal = true;
 
@@ -25,6 +25,26 @@ function autoFight()
 end
 end
 
+function tptoasriel()
+    spawn(function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+        wait(0.1)
+        iretouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+    end)
+end
+
 AutoTab:AddToggle({
 	Name = "Auto Fight",
 	Default = false,
@@ -32,6 +52,13 @@ AutoTab:AddToggle({
 		getgenv().autofighthal = Value
         autoFight()
 	end    
+})
+
+AutoTab:AddButton({
+	Name = "TP to Asriel",
+	Callback = function()
+		tptoasriel()
+  	end    
 })
 
 OrionLib:Init()
