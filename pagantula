@@ -39,9 +39,29 @@ function tptoasriel()
         wait(0.1)
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
         wait(0.1)
-        iretouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
         wait(0.1)
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+    end)
+end
+
+function tptoasgore()
+    spawn(function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
     end)
 end
 
@@ -58,6 +78,13 @@ AutoTab:AddButton({
 	Name = "TP to Asriel",
 	Callback = function()
 		tptoasriel()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "TP to Asgore",
+	Callback = function()
+		tptoasgore()
   	end    
 })
 
