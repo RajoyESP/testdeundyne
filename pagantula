@@ -65,6 +65,16 @@ function tptoasgore()
     end)
 end
 
+function equipmorph()
+    spawn(function()
+        local args = {
+            [1] = game:GetService("Players").LocalPlayer,
+            [2] = "ReaperSansMorph"
+        }
+        game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+    end)
+end
+
 AutoTab:AddToggle({
 	Name = "Auto Fight",
 	Default = false,
@@ -85,6 +95,13 @@ AutoTab:AddButton({
 	Name = "TP to Asgore",
 	Callback = function()
 		tptoasgore()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Reaper",
+	Callback = function()
+		equipmorph()
   	end    
 })
 
