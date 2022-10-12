@@ -16,6 +16,12 @@ local TPTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local MiscTab = Window:MakeTab({
+	Name = "Miscellanious",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 function autoFight()
     while getgenv().autofighthal == true do
         for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
@@ -122,6 +128,24 @@ function tptoerror()
     end)
 end
 
+function infiniteyield()
+    spawn(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    end)
+end
+
+function simpleremote()
+    spawn(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+    end)
+end
+
+function ut3dbypass()
+    spawn(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbbbypass"))()
+    end)
+end
+
 AutoTab:AddToggle({
 	Name = "Auto Fight",
 	Default = false,
@@ -172,6 +196,27 @@ AutoTab:AddButton({
 	Name = "Equip Reaper Sans Morph",
 	Callback = function()
 		equipmorph()
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "Infinite Yield",
+	Callback = function()
+		infiniteyield()
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "Simple Remote Spy",
+	Callback = function()
+		simpleremote()
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "UT3DBB Bypass",
+	Callback = function()
+		ut3dbypass()
   	end    
 })
 
