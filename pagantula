@@ -176,7 +176,17 @@ function equipmorph7()
     spawn(function()
     local args = {
         [1] = game:GetService("Players").LocalPlayer,
-        [2] = "RainbowCat"
+        [2] = "RainbowBasicCat"
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph8()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "MetalCat"
     }
     game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
 end)
@@ -325,6 +335,13 @@ AutoTab:AddButton({
 	Name = "Equip Rainbow Cat",
 	Callback = function()
 		equipmorph7()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Metal Cat",
+	Callback = function()
+		equipmorph8()
   	end    
 })
 
