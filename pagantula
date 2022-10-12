@@ -142,6 +142,16 @@ function equipmorph5()
 end)
 end
 
+function equipmorph6()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "ReaperCharaMorph"
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
 function tptofinalg()
     spawn(function()
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
@@ -264,6 +274,13 @@ AutoTab:AddButton({
 	Name = "Equip Duck Morph",
 	Callback = function()
 		equipmorph5()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Reaper Chara Morph",
+	Callback = function()
+		equipmorph6()
   	end    
 })
 
