@@ -1,7 +1,8 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEnabled = true, IntroText = "RajoyESP's Productions", HidePremium = false, SaveConfig = true, ConfigFolder = "Pepinillotest"})
+local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEnabled = true, IntroText = "RajoyESP's Productions", HidePremium = false, SaveConfig = true, ConfigFolder = "Facherumtest"})
 
 getgenv().autofighthal = true;
+getgenv().autograbpumpkin = true;
 
 local AutoTab = Window:MakeTab({
 	Name = "Automate Stuff Tab",
@@ -20,9 +21,23 @@ function autoFight()
             firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 1)
             wait(0.1)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 0)
+            end
         end
     end
 end
+
+function collectpumps()
+    spawn(function()
+        while getgenv().autograbpumpkin == true do
+            for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
+                if v.Name == "jackolantern" then
+                firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 1)
+                wait(0.1)
+                firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 0)
+                end
+            end
+        end
+    end)
 end
 
 function tptoasriel()
@@ -66,12 +81,38 @@ function tptoasgore()
 end
 
 function equipmorph()
-    spawn(function()
+        spawn(function()
         local args = {
             [1] = game:GetService("Players").LocalPlayer,
             [2] = "ReaperSansMorph"
         }
         game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+    end)
+end
+
+function tptofinalg()
+    spawn(function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+    end)
+end
+
+function tptoerror()
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15799.9219, 25861.7676, 575.419556)
     end)
 end
 
@@ -81,6 +122,15 @@ AutoTab:AddToggle({
 	Callback = function(Value)
 		getgenv().autofighthal = Value
         autoFight()
+	end    
+})
+
+AutoTab:AddToggle({
+	Name = "Auto Grab Pumps",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autograbpumpkin = Value
+        collectpumps()
 	end    
 })
 
@@ -99,7 +149,21 @@ AutoTab:AddButton({
 })
 
 AutoTab:AddButton({
-	Name = "Equip Reaper",
+	Name = "TP to Final Gaster",
+	Callback = function()
+		tptofinalg()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "TP to Error Sans",
+	Callback = function()
+		tptoerror()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Reaper Sans Morph",
 	Callback = function()
 		equipmorph()
   	end    
