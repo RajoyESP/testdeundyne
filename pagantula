@@ -5,7 +5,7 @@ getgenv().autofighthal = true;
 getgenv().autograbpumpkin = true;
 
 local AutoTab = Window:MakeTab({
-	Name = "Automate Stuff",
+	Name = "Morphs",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -226,7 +226,7 @@ function ut3dbypass()
     end)
 end
 
-AutoTab:AddToggle({
+MiscTab:AddToggle({
 	Name = "Auto Fight",
 	Default = false,
 	Callback = function(Value)
@@ -235,7 +235,7 @@ AutoTab:AddToggle({
 	end    
 })
 
-AutoTab:AddToggle({
+TPTab:AddToggle({
 	Name = "Auto Grab Pumps",
 	Default = false,
 	Callback = function(Value)
