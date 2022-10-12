@@ -72,6 +72,26 @@ function tptoasriel()
     end)
 end
 
+function tptoundyne()
+    spawn(function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+    end)
+end
+
 function tptoasgore()
     spawn(function()
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
@@ -232,6 +252,13 @@ TPTab:AddButton({
 	Name = "TP to Final Gaster",
 	Callback = function()
 		tptofinalg()
+  	end    
+})
+
+TPTab:AddButton({
+	Name = "TP to Undyne",
+	Callback = function()
+		tptoundyne()
   	end    
 })
 
