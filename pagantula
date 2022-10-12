@@ -102,6 +102,46 @@ function equipmorph()
     end)
 end
 
+function equipmorph2()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "KillerSansMorph"
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph3()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "KillerCat"
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph4()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "SantaAsgoreMorph"
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph4()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "DuckMorph"
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
 function tptofinalg()
     spawn(function()
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
@@ -196,6 +236,34 @@ AutoTab:AddButton({
 	Name = "Equip Reaper Sans Morph",
 	Callback = function()
 		equipmorph()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Killer Sans Morph",
+	Callback = function()
+		equipmorph2()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Killer Cat Morph",
+	Callback = function()
+		equipmorph3()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Santa Asgore Morph",
+	Callback = function()
+		equipmorph4()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Duck Morph",
+	Callback = function()
+		equipmorph5()
   	end    
 })
 
