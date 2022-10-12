@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEnabled = true, IntroText = "RajoyESP's Productions", HidePremium = false, SaveConfig = true, ConfigFolder = "Facherumtest"})
+local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEnabled = true, IntroText = "Paquito's Productions", HidePremium = false, SaveConfig = true, ConfigFolder = "Facherumtest"})
 
 getgenv().autofighthal = true;
 getgenv().autograbpumpkin = true;
