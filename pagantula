@@ -5,7 +5,13 @@ getgenv().autofighthal = true;
 getgenv().autograbpumpkin = true;
 
 local AutoTab = Window:MakeTab({
-	Name = "Automate Stuff Tab",
+	Name = "Automate Stuff",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TPTab = Window:MakeTab({
+	Name = "Tps",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -134,28 +140,28 @@ AutoTab:AddToggle({
 	end    
 })
 
-AutoTab:AddButton({
+TPTab:AddButton({
 	Name = "TP to Asriel",
 	Callback = function()
 		tptoasriel()
   	end    
 })
 
-AutoTab:AddButton({
+TPTab:AddButton({
 	Name = "TP to Asgore",
 	Callback = function()
 		tptoasgore()
   	end    
 })
 
-AutoTab:AddButton({
+TPTab:AddButton({
 	Name = "TP to Final Gaster",
 	Callback = function()
 		tptofinalg()
   	end    
 })
 
-AutoTab:AddButton({
+TPTab:AddButton({
 	Name = "TP to Error Sans",
 	Callback = function()
 		tptoerror()
