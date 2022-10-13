@@ -3,6 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEna
 
 getgenv().autofighthal = true;
 getgenv().autograbpumpkin = true;
+getgenv().autofood = true;
 
 local AutoTab = Window:MakeTab({
 	Name = "Morphs",
@@ -69,6 +70,21 @@ function tptoasriel()
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
         wait(0.1)
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+    end)
+end
+
+function buyfud()
+    spawn(function()
+        fireclickdetector(workspace.FaceStake.ClickDetector)
+    end)
+end
+
+function autobuyfud()
+    spawn(function()
+        while getgenv().autofood == true do
+            fireclickdetector(workspace.FaceStake.ClickDetector)
+            wait(0.5)
+        end
     end)
 end
 
@@ -363,6 +379,22 @@ MiscTab:AddButton({
 	Name = "UT3DBB Bypass",
 	Callback = function()
 		ut3dbypass()
+  	end    
+})
+
+MiscTab:AddToggle({
+	Name = "Auto Buy Steak",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autofood = Value
+        autobuyfud()
+	end    
+})
+
+MiscTab:AddButton({
+	Name = "Buy Steak",
+	Callback = function()
+		buyfud()
   	end    
 })
 
