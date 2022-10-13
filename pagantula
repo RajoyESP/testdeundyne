@@ -194,21 +194,21 @@ function tptoerror() --Error Sans
 end
 
 --Miscellanious
-function autoFight() --Auto grab pumpkins -> fight Halloween Toriel / Papyrus
-    while getgenv().autofighthal == true do
-        for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
-            if v.Name == "jackolantern" then
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 1)
-            wait(0.1)
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 0)
-            wait(1)
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 1)
-            wait(0.1)
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 0)
-            end
-        end
-    end
-end
+-- function autoFight() --Auto grab pumpkins -> fight Halloween Toriel / Papyrus
+--     while getgenv().autofighthal == true do
+--         for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
+--             if v.Name == "jackolantern" then
+--             firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 1)
+--             wait(0.1)
+--             firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 0)
+--             wait(1)
+--             firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 1)
+--             wait(0.1)
+--             firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 0)
+--             end
+--         end
+--     end
+-- end
 
 function collectpumps() --Auto collect pumpkins
     spawn(function()
@@ -239,23 +239,23 @@ function autobuyfud() --Auto buy Mettaton Face's Steak
     end)
 end
 
-function infiniteyield() --Infinite Yield
-    spawn(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-    end)
-end
+-- function infiniteyield() --Infinite Yield
+--     spawn(function()
+--         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+--     end)
+-- end
 
-function simpleremote() --Simple Remote Spy
-    spawn(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
-    end)
-end
+-- function simpleremote() --Simple Remote Spy
+--     spawn(function()
+--         loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+--     end)
+-- end
 
-function ut3dbypass() --UT3DBB Bypass (NOT WORKING!!!)
-    spawn(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbbbypass"))()
-    end)
-end
+-- function ut3dbypass() --UT3DBB Bypass (NOT WORKING!!!)
+--     spawn(function()
+--         loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbbbypass"))()
+--     end)
+-- end
 
 --Auto Tab
 AutoTab:AddButton({
