@@ -360,35 +360,35 @@ TPTab:AddButton({
 })
 
 --Misc Tab
-MiscTab:AddToggle({
-	Name = "Auto Fight",
-	Default = false,
-	Callback = function(Value)
-		getgenv().autofighthal = Value
-        autoFight()
-	end    
-})
+-- MiscTab:AddToggle({
+-- 	Name = "Auto Fight",
+-- 	Default = false,
+-- 	Callback = function(Value)
+-- 		getgenv().autofighthal = Value
+--         autoFight()
+-- 	end    
+-- })
 
-MiscTab:AddButton({
-	Name = "Infinite Yield",
-	Callback = function()
-		infiniteyield()
-  	end    
-})
+-- MiscTab:AddButton({
+-- 	Name = "Infinite Yield",
+-- 	Callback = function()
+-- 		infiniteyield()
+--   	end    
+-- })
 
-MiscTab:AddButton({
-	Name = "Simple Remote Spy",
-	Callback = function()
-		simpleremote()
-  	end    
-})
+-- MiscTab:AddButton({
+-- 	Name = "Simple Remote Spy",
+-- 	Callback = function()
+-- 		simpleremote()
+--   	end    
+-- })
 
-MiscTab:AddButton({
-	Name = "UT3DBB Bypass",
-	Callback = function()
-		ut3dbypass()
-  	end    
-})
+-- MiscTab:AddButton({
+-- 	Name = "UT3DBB Bypass",
+-- 	Callback = function()
+-- 		ut3dbypass()
+--   	end    
+-- })
 
 MiscTab:AddToggle({
 	Name = "Auto Buy Steak",
