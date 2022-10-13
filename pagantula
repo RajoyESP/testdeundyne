@@ -5,6 +5,7 @@ local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEna
 getgenv().autofighthal = true;
 getgenv().autograbpumpkin = true;
 getgenv().autofood = true;
+getgenv().autofood2 = true;
 
 --Tab Creation
 local AutoTab = Window:MakeTab({
@@ -239,6 +240,21 @@ function autobuyfud() --Auto buy Mettaton Face's Steak
     end)
 end
 
+function buyfud2() --Buy Huss Puppies
+    spawn(function()
+        fireclickdetector(workspace.ExtraBossMaps.Stand.FaceStake.ClickDetector)
+    end)
+end
+
+function autobuyfud2() --Auto buy Huss Puppies
+    spawn(function()
+        while getgenv().autofood2 == true do
+            fireclickdetector(workspace.ExtraBossMaps.Stand.FaceStake.ClickDetector)
+            wait(0.5)
+        end
+    end)
+end
+
 -- function infiniteyield() --Infinite Yield
 --     spawn(function()
 --         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
@@ -403,6 +419,22 @@ MiscTab:AddButton({
 	Name = "Buy Steak",
 	Callback = function()
 		buyfud()
+  	end    
+})
+
+MiscTab:AddToggle({
+	Name = "Auto Puppies",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autofood2 = Value
+        autobuyfud2()
+	end    
+})
+
+MiscTab:AddButton({
+	Name = "Buy Puppies",
+	Callback = function()
+		buyfud2()
   	end    
 })
 
