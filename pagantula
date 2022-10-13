@@ -1,10 +1,12 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEnabled = true, IntroText = "Paquito's Productions", HidePremium = false, SaveConfig = true, ConfigFolder = "Facherumtest"})
 
+--Values
 getgenv().autofighthal = true;
 getgenv().autograbpumpkin = true;
 getgenv().autofood = true;
 
+--Tab Creation
 local AutoTab = Window:MakeTab({
 	Name = "Morphs",
 	Icon = "rbxassetid://4483345998",
@@ -23,7 +25,176 @@ local MiscTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-function autoFight()
+--Morphs
+function equipmorph()
+        spawn(function()
+        local args = {
+            [1] = game:GetService("Players").LocalPlayer,
+            [2] = "ReaperSansMorph" --Reaper Sans
+        }
+        game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+    end)
+end
+
+function equipmorph2()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "KillerSansMorph" --Killer Sans
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph3()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "KillerCat" --Killer Cat
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph4()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "SantaAsgoreMorph" --Christmas Asgore
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph5()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "DuckMorph" --DIO's Duck
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph6()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "ReaperCharaMorph" --Reaper Chara
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph7()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "RainbowBasicCat" --Rainbow Cat
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorph8()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "MetalCat" --Metal Cat
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+--Tps
+function tptoasriel() --Asriel
+    spawn(function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+    end)
+end
+
+function tptoundyne() --Undyne
+    spawn(function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+    end)
+end
+
+function tptoasgore() --Underfell Asgore
+    spawn(function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
+    end)
+end
+
+function tptofinalg() --Final Gaster
+    spawn(function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+    end)
+end
+
+function tptoerror() --Error Sans
+    spawn(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15799.9219, 25861.7676, 575.419556)
+    end)
+end
+
+--Miscellanious
+function autoFight() --Auto grab pumpkins -> fight Halloween Toriel / Papyrus
     while getgenv().autofighthal == true do
         for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
             if v.Name == "jackolantern" then
@@ -39,7 +210,7 @@ function autoFight()
     end
 end
 
-function collectpumps()
+function collectpumps() --Auto collect pumpkins
     spawn(function()
         while getgenv().autograbpumpkin == true do
             for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
@@ -53,33 +224,13 @@ function collectpumps()
     end)
 end
 
-function tptoasriel()
-    spawn(function()
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
-    end)
-end
-
-function buyfud()
+function buyfud() --Buy Mettaton Face's Steak
     spawn(function()
         fireclickdetector(workspace.FaceStake.ClickDetector)
     end)
 end
 
-function autobuyfud()
+function autobuyfud() --Auto buy Mettaton Face's Steak
     spawn(function()
         while getgenv().autofood == true do
             fireclickdetector(workspace.FaceStake.ClickDetector)
@@ -88,223 +239,25 @@ function autobuyfud()
     end)
 end
 
-function tptoundyne()
-    spawn(function()
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
-    end)
-end
-
-function tptoasgore()
-    spawn(function()
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
-    end)
-end
-
-function equipmorph()
-        spawn(function()
-        local args = {
-            [1] = game:GetService("Players").LocalPlayer,
-            [2] = "ReaperSansMorph"
-        }
-        game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
-    end)
-end
-
-function equipmorph2()
-    spawn(function()
-    local args = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "KillerSansMorph"
-    }
-    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
-end)
-end
-
-function equipmorph3()
-    spawn(function()
-    local args = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "KillerCat"
-    }
-    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
-end)
-end
-
-function equipmorph4()
-    spawn(function()
-    local args = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "SantaAsgoreMorph"
-    }
-    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
-end)
-end
-
-function equipmorph5()
-    spawn(function()
-    local args = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "DuckMorph"
-    }
-    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
-end)
-end
-
-function equipmorph6()
-    spawn(function()
-    local args = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "ReaperCharaMorph"
-    }
-    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
-end)
-end
-
-function equipmorph7()
-    spawn(function()
-    local args = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "RainbowBasicCat"
-    }
-    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
-end)
-end
-
-function equipmorph8()
-    spawn(function()
-    local args = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "MetalCat"
-    }
-    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
-end)
-end
-
-function tptofinalg()
-    spawn(function()
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
-        wait(0.1)
-        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
-    end)
-end
-
-function tptoerror()
-    spawn(function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15799.9219, 25861.7676, 575.419556)
-    end)
-end
-
-function infiniteyield()
+function infiniteyield() --Infinite Yield
     spawn(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
     end)
 end
 
-function simpleremote()
+function simpleremote() --Simple Remote Spy
     spawn(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
     end)
 end
 
-function ut3dbypass()
+function ut3dbypass() --UT3DBB Bypass (NOT WORKING!!!)
     spawn(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/emkodelirdi/EmkoDelirdi/main/ut3dbbbypass"))()
     end)
 end
 
-MiscTab:AddToggle({
-	Name = "Auto Fight",
-	Default = false,
-	Callback = function(Value)
-		getgenv().autofighthal = Value
-        autoFight()
-	end    
-})
-
-TPTab:AddToggle({
-	Name = "Auto Grab Pumps",
-	Default = false,
-	Callback = function(Value)
-		getgenv().autograbpumpkin = Value
-        collectpumps()
-	end    
-})
-
-TPTab:AddButton({
-	Name = "TP to Asriel",
-	Callback = function()
-		tptoasriel()
-  	end    
-})
-
-TPTab:AddButton({
-	Name = "TP to Asgore",
-	Callback = function()
-		tptoasgore()
-  	end    
-})
-
-TPTab:AddButton({
-	Name = "TP to Final Gaster",
-	Callback = function()
-		tptofinalg()
-  	end    
-})
-
-TPTab:AddButton({
-	Name = "TP to Undyne",
-	Callback = function()
-		tptoundyne()
-  	end    
-})
-
-TPTab:AddButton({
-	Name = "TP to Error Sans",
-	Callback = function()
-		tptoerror()
-  	end    
-})
-
+--Auto Tab
 AutoTab:AddButton({
 	Name = "Equip Reaper Sans Morph",
 	Callback = function()
@@ -359,6 +312,61 @@ AutoTab:AddButton({
 	Callback = function()
 		equipmorph8()
   	end    
+})
+
+--TP Tab
+TPTab:AddToggle({
+	Name = "Auto Grab Pumps",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autograbpumpkin = Value
+        collectpumps()
+	end    
+})
+
+TPTab:AddButton({
+	Name = "TP to Asriel",
+	Callback = function()
+		tptoasriel()
+  	end    
+})
+
+TPTab:AddButton({
+	Name = "TP to Asgore",
+	Callback = function()
+		tptoasgore()
+  	end    
+})
+
+TPTab:AddButton({
+	Name = "TP to Final Gaster",
+	Callback = function()
+		tptofinalg()
+  	end    
+})
+
+TPTab:AddButton({
+	Name = "TP to Undyne",
+	Callback = function()
+		tptoundyne()
+  	end    
+})
+
+TPTab:AddButton({
+	Name = "TP to Error Sans",
+	Callback = function()
+		tptoerror()
+  	end    
+})
+
+--Misc Tab
+MiscTab:AddToggle({
+	Name = "Auto Fight",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autofighthal = Value
+        autoFight()
+	end    
 })
 
 MiscTab:AddButton({
