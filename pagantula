@@ -280,24 +280,6 @@ end
 -- end
 
 --Farm Tab
-AutoFarmTab:AddToggle({
-	Name = "Auto Buy Steak",
-	Default = false,
-	Callback = function(Value)
-		getgenv().autofood = Value
-        autobuyfud()
-	end    
-})
-
-AutoFarmTab:AddToggle({
-	Name = "Auto Grab Pumps",
-	Default = false,
-	Callback = function(Value)
-		getgenv().autograbpumpkin = Value
-        collectpumps()
-	end    
-})
-
 AutoFarmTab:AddButton({
 	Name = "TP to Asgore",
 	Callback = function()
@@ -318,6 +300,24 @@ AutoFarmTab:AddButton({
 		equipmorph6()
   	end    
 }) 
+
+AutoFarmTab:AddToggle({
+	Name = "Auto Buy Steak",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autofood = Value
+        autobuyfud()
+	end    
+})
+
+AutoFarmTab:AddToggle({
+	Name = "Auto Grab Pumps",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autograbpumpkin = Value
+        collectpumps()
+	end    
+})
 
 --Auto Tab
 AutoTab:AddButton({
