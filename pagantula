@@ -280,6 +280,24 @@ end
 -- end
 
 --Farm Tab
+AutoFarmTab:AddToggle({
+	Name = "Auto Buy Steak",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autofood = Value
+        autobuyfud()
+	end    
+})
+
+AutoFarmTab:AddToggle({
+	Name = "Auto Grab Pumps",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autograbpumpkin = Value
+        collectpumps()
+	end    
+})
+
 AutoFarmTab:AddButton({
 	Name = "TP to Asgore",
 	Callback = function()
@@ -352,15 +370,6 @@ AutoTab:AddButton({
 })
 
 --TP Tab
-TPTab:AddToggle({
-	Name = "Auto Grab Pumps",
-	Default = false,
-	Callback = function(Value)
-		getgenv().autograbpumpkin = Value
-        collectpumps()
-	end    
-})
-
 TPTab:AddButton({
 	Name = "TP to Final Gaster",
 	Callback = function()
@@ -412,15 +421,6 @@ TPTab:AddButton({
 -- 		ut3dbypass()
 --   	end    
 -- })
-
-MiscTab:AddToggle({
-	Name = "Auto Buy Steak",
-	Default = false,
-	Callback = function(Value)
-		getgenv().autofood = Value
-        autobuyfud()
-	end    
-})
 
 MiscTab:AddButton({
 	Name = "Buy Steak",
