@@ -8,6 +8,12 @@ getgenv().autofood = true;
 getgenv().autofood2 = true;
 
 --Tab Creation
+local AutoFarmTab = Window:MakeTab({
+	Name = "Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 local AutoTab = Window:MakeTab({
 	Name = "Morphs",
 	Icon = "rbxassetid://4483345998",
@@ -273,6 +279,28 @@ end
 --     end)
 -- end
 
+--Farm Tab
+AutoFarmTab:AddButton({
+	Name = "TP to Asgore",
+	Callback = function()
+		tptoasgore()
+  	end    
+})
+
+AutoFarmTab:AddButton({
+	Name = "TP to Asriel",
+	Callback = function()
+		tptoasriel()
+  	end    
+})
+
+AutoFarmTab:AddButton({
+	Name = "Equip Reaper Chara Morph",
+	Callback = function()
+		equipmorph6()
+  	end    
+}) 
+
 --Auto Tab
 AutoTab:AddButton({
 	Name = "Equip Reaper Sans Morph",
@@ -310,13 +338,6 @@ AutoTab:AddButton({
 })
 
 AutoTab:AddButton({
-	Name = "Equip Reaper Chara Morph",
-	Callback = function()
-		equipmorph6()
-  	end    
-}) 
-
-AutoTab:AddButton({
 	Name = "Equip Rainbow Cat",
 	Callback = function()
 		equipmorph7()
@@ -338,20 +359,6 @@ TPTab:AddToggle({
 		getgenv().autograbpumpkin = Value
         collectpumps()
 	end    
-})
-
-TPTab:AddButton({
-	Name = "TP to Asriel",
-	Callback = function()
-		tptoasriel()
-  	end    
-})
-
-TPTab:AddButton({
-	Name = "TP to Asgore",
-	Callback = function()
-		tptoasgore()
-  	end    
 })
 
 TPTab:AddButton({
