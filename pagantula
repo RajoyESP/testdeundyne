@@ -113,6 +113,36 @@ function equipmorph8()
 end)
 end
 
+function equipmorph9()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "CrazedCat" --Crazed Cat
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorphpatata()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").patataalt_456,
+        [2] = "ReaperCharaMorph" --ReaperCharaMorph patataalt_456
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+function equipmorphimnot()
+    spawn(function()
+    local args = {
+        [1] = game:GetService("Players").imnot_thebest459,
+        [2] = "ReaperCharaMorph" --ReaperCharaMorph imnot_thebest459
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
 --Tps
 function tptoasriel() --Asriel
     spawn(function()
@@ -319,6 +349,20 @@ AutoFarmTab:AddToggle({
 	end    
 })
 
+AutoFarmTab:AddButton({
+	Name = "Equip Reaper Chara Morph (patata)",
+	Callback = function()
+		equipmorphpatata()
+  	end    
+})
+
+AutoFarmTab:AddButton({
+	Name = "Equip Reaper Chara Morph (imnot_thebest)",
+	Callback = function()
+		equipmorphimnot()
+  	end    
+})
+
 --Auto Tab
 AutoTab:AddButton({
 	Name = "Equip Reaper Sans Morph",
@@ -366,6 +410,13 @@ AutoTab:AddButton({
 	Name = "Equip Metal Cat",
 	Callback = function()
 		equipmorph8()
+  	end    
+})
+
+AutoTab:AddButton({
+	Name = "Equip Crazed Cat",
+	Callback = function()
+		equipmorph9()
   	end    
 })
 
