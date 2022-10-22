@@ -426,11 +426,11 @@ end
 function meandyou()
     spawn(function()
         while getgenv().poronguilla == true do
-            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  0)
-            wait(0.1)
             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  1)
             wait(0.1)
-            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_456"].Chest.MagicBall,  0)
+            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  0)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_456"].Chest.MagicBall,  1)
             wait(0.1)
             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_456"].Chest.MagicBall,  0)
         end
