@@ -8,6 +8,8 @@ getgenv().autofood = true;
 getgenv().autofood2 = true;
 getgenv().autonights = true;
 getgenv().autonightp = true;
+getgenv().autotouchu = true;
+getgenv().autotouchufu = true;
 
 --Tab Creation
 local AutoFarmTab = Window:MakeTab({
@@ -42,6 +44,12 @@ local D7Tab = Window:MakeTab({
 
 local InputTab = Window:MakeTab({
 	Name = "Inputs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TestTab = Window:MakeTab({
+	Name = "Tests",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -458,6 +466,43 @@ function toalphysness() --Alphys / Ness
     end)
 end
 
+--Test Tab
+function touchundyne()
+    spawn(function()
+        while getgenv().autotouchu == true do
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+        end
+    end)
+end
+
+function touchundyneofundying()
+    spawn(function()
+        while getgenv().autotouchufu == true do
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+        end
+    end)
+end
+
 --Farm Tab
 AutoFarmTab:AddButton({
 	Name = "TP to Asgore",
@@ -728,6 +773,21 @@ InputTab:AddBind({
 	Callback = function()
 		buyfud2()
 	end    
+})
+
+--Test Tab
+TestTab:AddButton({
+	Name = "Touch Undyne",
+	Callback = function()
+		touchundyne()
+  	end    
+})
+
+TestTab:AddButton({
+	Name = "Touch Undyne of Undying",
+	Callback = function()
+		touchundyneofundying()
+  	end    
 })
 
 OrionLib:Init()
