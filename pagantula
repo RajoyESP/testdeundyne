@@ -34,6 +34,12 @@ local MiscTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local D7Tab = Window:MakeTab({
+	Name = "Miscellanious",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 --Morphs
 function equipmorph()
         spawn(function()
@@ -339,6 +345,43 @@ end
 --     end)
 -- end
 
+--D7 Tab
+function tofresh() --Fresh Sans
+    spawn(function()
+        firetouchinterest(game:GetService("Workspace").D7Doors.FreshDoor.Door)
+    end)
+end
+function tonightmare() --Nightmare Sans
+    spawn(function()
+        firetouchinterest(game:GetService("Workspace").D7Doors.NightmareDoor.Door)
+    end)
+end
+function tocross() --Cross Sans
+    spawn(function()
+        firetouchinterest(game:GetService("Workspace").D7Doors.CrossDoor.Door)
+    end)
+end
+function tored() --Red Sans
+    spawn(function()
+        firetouchinterest(game:GetService("Workspace").D7Doors.RedDoor.Door)
+    end)
+end
+function todust() --Dust Sans
+    spawn(function()
+        firetouchinterest(game:GetService("Workspace").D7Doors.DustDoor.Door)
+    end)
+end
+function tofatal() --Fatal Error Sans
+    spawn(function()
+        firetouchinterest(game:GetService("Workspace").D7Doors.FatalDoor.Door)
+    end)
+end
+function toalphysness() --Alphys / Ness
+    spawn(function()
+        firetouchinterest(game:GetService("Workspace").D7Doors.MysteryDoor.Door)
+    end)
+end
+
 --Farm Tab
 AutoFarmTab:AddButton({
 	Name = "TP to Asgore",
@@ -548,6 +591,56 @@ MiscTab:AddButton({
 	Name = "Tp to D7",
 	Callback = function()
 		gotod7()
+  	end    
+})
+
+--D7 Tab
+D7Tab:AddButton({
+	Name = "Tp to Fatal Error Sans",
+	Callback = function()
+		tofatal()
+  	end    
+})
+
+D7Tab:AddButton({
+	Name = "Tp to Dust Sans",
+	Callback = function()
+		todust()
+  	end    
+})
+
+D7Tab:AddButton({
+	Name = "Tp to Red Sans",
+	Callback = function()
+		tored()
+  	end    
+})
+
+D7Tab:AddButton({
+	Name = "Tp to Nightmare Sans",
+	Callback = function()
+		tonightmare()
+  	end    
+})
+
+D7Tab:AddButton({
+	Name = "Tp to Cross Sans",
+	Callback = function()
+		tocross()
+  	end    
+})
+
+D7Tab:AddButton({
+	Name = "Tp to Fresh",
+	Callback = function()
+		tofresh()
+  	end    
+})
+
+D7Tab:AddButton({
+	Name = "Tp to Alphys / Ness",
+	Callback = function()
+		toalphysness()
   	end    
 })
 
