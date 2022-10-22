@@ -11,6 +11,8 @@ getgenv().autonightp = true;
 getgenv().autotouchu = true;
 getgenv().autotouchufu = true;
 getgenv().autotouchfellas = true;
+getgenv().everyautotouchfellas = true;
+getgenv().poronguilla = true;
 
 --Tab Creation
 local AutoFarmTab = Window:MakeTab({
@@ -149,6 +151,51 @@ function equipmorph9()
         [2] = "CrazedCat" --Crazed Cat
     }
     game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+end)
+end
+
+-- function equipmorph10()
+--     spawn(function()
+--     local args = {
+--         [1] = game:GetService("Players").patataalt_456,
+--         [2] = "ReaperCharaMorph" --Crazed Cat
+--     }
+--     game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+--     local args2 = {
+--         [1] = game:GetService("Players").patataalt_467,
+--         [2] = "ReaperCharaMorph" --Crazed Cat
+--     }
+--     game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args2))
+--     local args3 = {
+--         [1] = game:GetService("Players").patataalt_462,
+--         [2] = "ReaperCharaMorph" --Crazed Cat
+--     }
+--     game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args3))
+--     local args4 = {
+--         [1] = game:GetService("Players").patataalt_464,
+--         [2] = "ReaperCharaMorph" --Crazed Cat
+--     }
+--     game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args4))
+--     local args5 = {
+--         [1] = game:GetService("Players").imnot_thebest459,
+--         [2] = "ReaperCharaMorph" --Crazed Cat
+--     }
+--     game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args5))
+--     end)
+-- end
+
+function morphmeandyou()
+    spawn(function()
+    local args1 = {
+        [1] = game:GetService("Players").patataalt_456,
+        [2] = "ReaperCharaMorph" --ReaperCharaMorph patataalt_456
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args1))
+    local args2 = {
+        [1] = game:GetService("Players").imnot_thebest459,
+        [2] = "ReaperCharaMorph" --ReaperCharaMorph imnot_thebest459
+    }
+    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args2))
 end)
 end
 
@@ -376,6 +423,45 @@ function touchasgore()
     end)
 end
 
+function meandyou()
+        while getgenv().poronguilla == true do
+            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  0)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patatalt_456"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patatalt_456"].Chest.MagicBall,  0)
+        end
+    end)
+end
+
+-- function everyonetouchasgore()
+--     spawn(function()
+--         while getgenv().everyautotouchfellas == true do
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  1)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  0)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_467"].Chest.MagicBall,  1)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_467"].Chest.MagicBall,  0)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_464"].Chest.MagicBall,  1)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_464"].Chest.MagicBall,  0)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_462"].Chest.MagicBall,  1)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_462"].Chest.MagicBall,  0)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_456"].Chest.MagicBall,  1)
+--             wait(0.1)
+--             firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["patataalt_456"].Chest.MagicBall,  0)
+--         end
+--     end)
+-- end
+
 --D7
 function tofresh() --Fresh Sans
     spawn(function()
@@ -562,7 +648,7 @@ AutoFarmTab:AddButton({
 AutoFarm2Tab:AddButton({
 	Name = "Equip Reaper Chara Morph",
 	Callback = function()
-		equipmorph6()
+		morphmeandyou()
   	end    
 })
 
@@ -573,12 +659,28 @@ AutoFarm2Tab:AddButton({
   	end    
 })
 
+-- AutoFarm2Tab:AddToggle({
+-- 	Name = "Touch Asgore (Magic Ball)",
+-- 	Default = false,
+-- 	Callback = function(Value)
+-- 		getgenv().autotouchfellas = Value
+--         touchasgore()
+-- 	end    
+-- })
+
+-- AutoFarm2Tab:AddButton({
+-- 	Name = "Equip all morph",
+-- 	Callback = function()
+-- 		equipmorph10()
+--   	end    
+-- })
+
 AutoFarm2Tab:AddToggle({
-	Name = "Touch Asgore (Magic Ball)",
+	Name = "Everyone Touch Asgore (Magic Ball)",
 	Default = false,
 	Callback = function(Value)
-		getgenv().autotouchfellas = Value
-        touchasgore()
+		getgenv().poronguilla = Value
+        meandyou()
 	end    
 })
 
