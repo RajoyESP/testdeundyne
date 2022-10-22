@@ -664,6 +664,15 @@ MiscTab:AddButton({
   	end    
 })
 
+MiscTab:AddTextbox({
+	Name = "Textbox",
+	Default = "default box input",
+	TextDisappear = true,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
 --D7 Tab
 D7Tab:AddButton({
 	Name = "Tp to Fatal Error Sans",
