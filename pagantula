@@ -470,8 +470,9 @@ end
 function touchundyne()
     spawn(function()
         while getgenv().autotouchu == true do
-            wait(0.1)
             firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
         end
     end)
 end
@@ -479,8 +480,9 @@ end
 function touchundyneofundying()
     spawn(function()
         while getgenv().autotouchufu == true do
-            wait(0.1)
             firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
         end
     end)
 end
