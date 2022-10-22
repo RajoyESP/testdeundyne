@@ -776,18 +776,22 @@ InputTab:AddBind({
 })
 
 --Test Tab
-TestTab:AddButton({
+TestTab:AddToggle({
 	Name = "Touch Undyne",
-	Callback = function()
-		touchundyne()
-  	end    
+	Default = false,
+	Callback = function(Value)
+		getgenv().autotouchu = Value
+        touchundyne()
+	end    
 })
 
-TestTab:AddButton({
+TestTab:AddToggle({
 	Name = "Touch Undyne of Undying",
-	Callback = function()
-		touchundyneofundying()
-  	end    
+	Default = false,
+	Callback = function(Value)
+		getgenv().autotouchufu = Value
+        touchundyneofundying()
+	end    
 })
 
 OrionLib:Init()
