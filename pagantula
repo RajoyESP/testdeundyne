@@ -40,6 +40,12 @@ local D7Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local InputTab = Window:MakeTab({
+	Name = "Inputs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 --Morphs
 function equipmorph()
         spawn(function()
@@ -664,15 +670,6 @@ MiscTab:AddButton({
   	end    
 })
 
-MiscTab:AddTextbox({
-	Name = "Textbox",
-	Default = "default box input",
-	TextDisappear = true,
-	Callback = function(Value)
-		print(Value)
-	end	  
-})
-
 --D7 Tab
 D7Tab:AddButton({
 	Name = "Tp to Fatal Error Sans",
@@ -721,6 +718,16 @@ D7Tab:AddButton({
 	Callback = function()
 		toalphysness()
   	end    
+})
+
+--Input Tab
+InputTab:AddBind({
+	Name = "Buy Puppy",
+	Default = Enum.KeyCode.F,
+	Hold = false,
+	Callback = function()
+		buyfud2()
+	end    
 })
 
 OrionLib:Init()
