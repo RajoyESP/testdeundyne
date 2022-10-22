@@ -35,7 +35,7 @@ local MiscTab = Window:MakeTab({
 })
 
 local D7Tab = Window:MakeTab({
-	Name = "Miscellanious",
+	Name = "D7",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
