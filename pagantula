@@ -10,10 +10,17 @@ getgenv().autonights = true;
 getgenv().autonightp = true;
 getgenv().autotouchu = true;
 getgenv().autotouchufu = true;
+getgenv().autotouchfellas = true;
 
 --Tab Creation
 local AutoFarmTab = Window:MakeTab({
 	Name = "Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local AutoFarm2Tab = Window:MakeTab({
+	Name = "Farm 2",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -359,7 +366,17 @@ end
 --     end)
 -- end
 
---D7 Tab
+function touchasgore()
+    spawn(function()
+        while getgenv().autotouchfellas == true do
+            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  1)
+            wait(0.1)
+            firetouchinterest(game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  0)
+        end
+    end)
+end
+
+--D7
 function tofresh() --Fresh Sans
     spawn(function()
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], game:GetService("Workspace").D7Doors.FreshDoor.Door, 0)
@@ -466,13 +483,13 @@ function toalphysness() --Alphys / Ness
     end)
 end
 
---Test Tab
+--Test
 function touchundyne()
     spawn(function()
         while getgenv().autotouchu == true do
-            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  1)
             wait(0.1)
-            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
+            firetouchinterest(game:GetService("Workspace")["Undyne"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  0)
         end
     end)
 end
@@ -480,9 +497,9 @@ end
 function touchundyneofundying()
     spawn(function()
         while getgenv().autotouchufu == true do
-            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  1)
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  1)
             wait(0.1)
-            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["patataalt_458"].Chest.MagicBall,  0)
+            firetouchinterest(game:GetService("Workspace")["Undyne the Undying"].HumanoidRootPart, game:GetService("Workspace")["imnot_thebest459"].Chest.MagicBall,  0)
         end
     end)
 end
@@ -539,6 +556,30 @@ AutoFarmTab:AddButton({
 	Callback = function()
 		equipmorphimnot()
   	end    
+})
+
+--Auto Farm 2 Tab
+AutoFarm2Tab:AddButton({
+	Name = "Equip Reaper Chara Morph",
+	Callback = function()
+		equipmorph6()
+  	end    
+})
+
+AutoFarm2Tab:AddButton({
+	Name = "TP to Asgore",
+	Callback = function()
+		tptoasgore()
+  	end    
+})
+
+AutoFarm2Tab:AddToggle({
+	Name = "Touch Asgore (Magic Ball)",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autotouchfellas = Value
+        touchasgore()
+	end    
 })
 
 --Auto Tab
