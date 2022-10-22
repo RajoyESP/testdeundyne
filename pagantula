@@ -296,12 +296,12 @@ end
 function killpoporo()
     spawn(function()
         while getgenv().autonightp == true do
-        for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-            if v.Name == "Nightmare Papyrus" then
-                v.Humanoid.Health = 0
-                wait(0.1)
+            for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+                if v.Name == "Nightmare Papyrus" then
+                    v.Humanoid.Health = 0
                 end
             end
+            wait(0.1)
         end
     end)
 end
