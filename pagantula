@@ -6,6 +6,8 @@ getgenv().autofighthal = true;
 getgenv().autograbpumpkin = true;
 getgenv().autofood = true;
 getgenv().autofood2 = true;
+getgenv().autonights = true;
+getgenv().autonightp = true;
 
 --Tab Creation
 local AutoFarmTab = Window:MakeTab({
@@ -291,6 +293,28 @@ function autobuyfud2() --Auto buy Huss Puppies
     end)
 end
 
+function killpoporo()
+    spawn(function()
+        while getgenv().autonightp == true do
+        for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+            if v.Name == "Nightmare Papyrus" then
+                v.Humanoid.Health = 0
+                wait(0.1)
+                end
+            end
+        end
+    end)
+end
+
+function killsuns()
+    spawn(function()
+        while getgenv().autonights == true do
+            game:GetService("Workspace")["Nightmare Sans"].RealHealth.Value = 300
+            wait(0.1)
+        end 
+    end)
+end
+
 -- function infiniteyield() --Infinite Yield
 --     spawn(function()
 --         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
@@ -486,6 +510,24 @@ MiscTab:AddToggle({
 	Callback = function(Value)
 		getgenv().autofood2 = Value
         autobuyfud2()
+	end    
+})
+
+MiscTab:AddToggle({
+	Name = "Auto Kill Sans",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autonights = Value
+        killsuns()
+	end    
+})
+
+MiscTab:AddToggle({
+	Name = "Auto Kill Paps",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autonightp = Value
+        killpoporo()
 	end    
 })
 
