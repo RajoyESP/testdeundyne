@@ -315,6 +315,12 @@ function killsuns()
     end)
 end
 
+function gotod7()
+    spawn(function()
+        fireclickdetector(game:GetService("Workspace").D7Wheel.ClickDetector)
+    end)
+end
+
 -- function infiniteyield() --Infinite Yield
 --     spawn(function()
 --         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
@@ -535,6 +541,13 @@ MiscTab:AddButton({
 	Name = "Buy Puppies",
 	Callback = function()
 		buyfud2()
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "Tp to D7",
+	Callback = function()
+		gotod7()
   	end    
 })
 
