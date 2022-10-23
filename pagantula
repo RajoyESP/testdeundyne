@@ -623,14 +623,10 @@ end
 function pegaralgordo()
     spawn(function()
         while getgenv().pegaralgorodo == true do
-            for i,v2 in pairs(workspace.TemBosses:GetDescendants()) do
-                if v.Name == "HumanoidRootPart" then
-                    for i,v in pairs(workspace:GetDescendants()) do
-                        if v.Name == "MagicBall" then
-                            v.Position = v2.Position
-                            wait(0.1)
-                        end
-                    end
+            for i,v in pairs(workspace:GetDescendants()) do
+                if v.Name == "MagicBall" then
+                    v.Position = workspace.TemBosses["Tem Sans"].HumanoidRootPart.Position
+                    wait(0.1)
                 end
             end
         end
