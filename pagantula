@@ -15,6 +15,7 @@ getgenv().everyautotouchfellas = true;
 getgenv().poronguilla = true;
 getgenv().autopegar = true;
 getgenv().autopegar2 = true;
+getgenv().pegaralgorodo = true;
 
 --Tab Creation
 local AutoFarmTab = Window:MakeTab({
@@ -619,6 +620,25 @@ function pegarpuneitazogordo2()
     end)
 end
 
+function pegaralgordo()
+    spawn(function()
+        while getgenv().pegaralgorodo == true do
+            for i,v2 in pairs(workspace.TemBosses:GetDescendants()) do
+                if v.Name == "HumanoidRootPart" then
+                    for i,v in pairs(workspace:GetDescendants()) do
+                        if v.Name == "MagicBall" then
+                            v.Position = v2.Position
+                            wait(0.1)
+                        end
+                    end
+                end
+            end
+        end
+    end)
+end
+
+--game:GetService("Workspace").TemBosses["Tem Sans"]
+
 --Farm Tab
 AutoFarmTab:AddButton({
 	Name = "TP to Asgore",
@@ -714,11 +734,11 @@ AutoFarm2Tab:AddToggle({
 })
 
 AutoFarm2Tab:AddToggle({
-	Name = "Everyone Touch Undyne (Magic Ball)",
+	Name = "Everyone Tem Trials (Magic Ball)",
 	Default = false,
 	Callback = function(Value)
-		getgenv().autopegar2 = Value
-        pegarpuneitazogordo2()
+		getgenv().pegaralgorodo = Value
+        pegaralgordo()
 	end    
 })
 
