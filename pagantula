@@ -13,6 +13,8 @@ getgenv().autotouchufu = true;
 getgenv().autotouchfellas = true;
 getgenv().everyautotouchfellas = true;
 getgenv().poronguilla = true;
+getgenv().autopegar = true;
+getgenv().autopegar2 = true;
 
 --Tab Creation
 local AutoFarmTab = Window:MakeTab({
@@ -591,6 +593,32 @@ function touchundyneofundying()
     end)
 end
 
+function pegarpuneitazogordo()
+    spawn(function()
+        while getgenv().autopegar == true do
+            for i,v in pairs(workspace:GetDescendants()) do
+                if v.Name == "MagicBall" then
+                    v.Position = game:GetService("Workspace")["UnderFell Asgore"].HumanoidRootPart.Position
+                    wait(0.1)
+                end
+            end
+        end
+    end)
+end
+
+function pegarpuneitazogordo2()
+    spawn(function()
+        while getgenv().autopegar2 == true do
+            for i,v in pairs(workspace:GetDescendants()) do
+                if v.Name == "MagicBall" then
+                    v.Position = game:GetService("Workspace")["Undyne"].HumanoidRootPart.Position
+                    wait(0.1)
+                end
+            end
+        end
+    end)
+end
+
 --Farm Tab
 AutoFarmTab:AddButton({
 	Name = "TP to Asgore",
@@ -680,8 +708,17 @@ AutoFarm2Tab:AddToggle({
 	Name = "Everyone Touch Asgore (Magic Ball)",
 	Default = false,
 	Callback = function(Value)
-		getgenv().poronguilla = Value
-        meandyou()
+		getgenv().autopegar = Value
+        pegarpuneitazogordo()
+	end    
+})
+
+AutoFarm2Tab:AddToggle({
+	Name = "Everyone Touch Undyne (Magic Ball)",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autopegar2 = Value
+        pegarpuneitazogordo2()
 	end    
 })
 
