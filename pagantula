@@ -3,6 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "Undertale 3D Boss Battles", IntroEna
 
 --Values
 getgenv().autofighthal = true;
+getgenv().autofighthal2 = true;
 getgenv().autograbpumpkin = true;
 getgenv().autofood = true;
 getgenv().autofood2 = true;
@@ -338,6 +339,27 @@ function collectpumps() --Auto collect pumpkins
             end
         end
     end)
+end
+
+function autoFight2() --Auto grab pumpkins -> fight Halloween Toriel / Papyrus
+    while getgenv().autofighthal2 == true do
+        for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
+            if v.Name == "jackolantern" then
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 1)
+            wait(0.1)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 0)
+            wait(0.1)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 1)
+            wait(0.1)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 0)
+            end
+        end
+        local args = {
+            [1] = game:GetService("Players").LocalPlayer,
+            [2] = "ReaperCharaMorph" --ReaperCharaMorph LocalPlayer
+        }
+        game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+    end
 end
 
 function buyfud() --Buy Mettaton Face's Steak
@@ -735,6 +757,15 @@ AutoFarm2Tab:AddToggle({
 	Callback = function(Value)
 		getgenv().pegaralgorodo = Value
         pegaralgordo()
+	end    
+})
+
+AutoFarm2Tab:AddToggle({
+	Name = "Auto Fight Halloween",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autofighthal2 = Value
+        autoFight2()
 	end    
 })
 
