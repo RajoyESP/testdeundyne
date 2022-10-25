@@ -81,9 +81,11 @@ MainTab:CreateToggle({
 	end,
 })
 
+MainTab:CreateParagraph({Title = "Warning!", Content = "Cuidado con los morphs que eliges, por ejemplo Expunged, Plant, TesterFlag o Bambi son de admin (o casi imposibles de conseguir), asi que si te los pones, almenos hazlo en un sitio que no te vea nadie."})
+
 MainTab:CreateDropdown({
 	Name = "Select Morph",
-	Options = {"ReaperCharaMorph","ReaperSansMorph","SantaAsgoreMorph","DuckMorph","KillerCat","KillerSansMorph","RainbowBasicCat","MetalCat", "CrazedCat"},
+	Options = {"ReaperCharaMorph","ReaperSansMorph","SantaAsgoreMorph","DuckMorph","KillerCat","KillerSansMorph","RainbowBasicCat","MetalCat", "CrazedCat","Expunged","Plant","TesterFlag","Bambi"},
 	CurrentOption = "ReaperCharaMorph",
 	Callback = function(Option)
         game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(game:GetService("Players").LocalPlayer, Option)

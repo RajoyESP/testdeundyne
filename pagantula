@@ -130,11 +130,7 @@ end
 
 function equipmorph7()
     spawn(function()
-    local args = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "RainbowBasicCat" --Rainbow Cat
-    }
-    game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+sssss
 end)
 end
 
