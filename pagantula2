@@ -85,7 +85,7 @@ MainTab:CreateParagraph({Title = "Warning!", Content = "Cuidado con los morphs q
 
 MainTab:CreateDropdown({
 	Name = "Select Morph",
-	Options = {"ReaperCharaMorph","ReaperSansMorph","SantaAsgoreMorph","DuckMorph","KillerCat","KillerSansMorph","RainbowBasicCat","MetalCat", "CrazedCat","Expunged","Plant","TesterFlag","Bambi"},
+	Options = {"ReaperCharaMorph","ReaperSansMorph","SantaAsgoreMorph","DuckMorph","GoldenCat","KillerCat","KillerSansMorph","RainbowBasicCat","MetalCat", "CrazedCat","Expunged","Plant","TesterFlag","Bambi"},
 	CurrentOption = "ReaperCharaMorph",
 	Callback = function(Option)
         game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(game:GetService("Players").LocalPlayer, Option)
