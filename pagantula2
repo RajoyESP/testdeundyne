@@ -126,3 +126,10 @@ TpTab:CreateButton({
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
 	end,
 })
+
+TpTab:CreateButton({
+	Name = "Tp to UF Asgore",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15799.9219, 25861.7676, 575.419556)
+	end,
+})
