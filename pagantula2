@@ -1,0 +1,128 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({Name = "Undertale 3D Boss Battle"})
+
+local MainTab = Window:CreateTab("Main")
+
+local TpTab = Window:CreateTab("Tps")
+
+getgenv().autofood = true;
+getgenv().autograbpumpkin = true;
+getgenv().autofighthal2 = true;
+
+function autobuyfud() --Auto buy Face Steak
+    spawn(function()
+        while getgenv().autofood == true do
+            fireclickdetector(workspace.FaceStake.ClickDetector)
+            wait(0.5)
+        end
+    end)
+end
+
+function collectpumps() --Auto collect pumpkins
+    spawn(function()
+        while getgenv().autograbpumpkin == true do
+            for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
+                if v.Name == "jackolantern" then
+                firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 1)
+                wait(0.1)
+                firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 0)
+                end
+            end
+        end
+    end)
+end
+
+function autoFight2() --Auto grab pumpkins -> fight Halloween Toriel / Papyrus
+    while getgenv().autofighthal2 == true do
+        for i, v in pairs(game:GetService("Workspace").Halloween:GetDescendants()) do
+            if v.Name == "jackolantern" then
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 1)
+            wait(0.1)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 0)
+            wait(0.1)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 1)
+            wait(0.1)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Halloween.HalloweenDoor1.Door, 0)
+            end
+        end
+        local args = {
+            [1] = game:GetService("Players").LocalPlayer,
+            [2] = "ReaperCharaMorph"
+        }
+        game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(unpack(args))
+    end
+end
+
+MainTab:CreateToggle({
+	Name = "Auto Buy Steaks",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autofood = Value
+        autobuyfud()
+	end,
+})
+
+MainTab:CreateToggle({
+	Name = "Auto Collect Pumpkins",
+	CurrentValue = false,
+	Callback = function(Value)
+		getgenv().autograbpumpkin = Value
+        collectpumps()
+	end,
+})
+
+MainTab:CreateToggle({
+	Name = "Auto Fight Halloween",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autofighthal2 = Value
+        autoFight2()
+	end,
+})
+
+MainTab:CreateDropdown({
+	Name = "Select Morph",
+	Options = {"ReaperCharaMorph","ReaperSansMorph","SantaAsgoreMorph","DuckMorph","KillerCat","KillerSansMorph","RainbowBasicCat","MetalCat", "CrazedCat"},
+	CurrentOption = "ReaperCharaMorph",
+	Callback = function(Option)
+        game:GetService("ReplicatedStorage").MorphEquipRE:FireServer(game:GetService("Players").LocalPlayer, Option)
+        print(Option)
+	end,
+})
+
+TpTab:CreateButton({
+	Name = "Tp to Asriel",
+	Callback = function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.AsrielWarp, 1)
+	end,
+})
+
+TpTab:CreateButton({
+	Name = "Tp to Final Gaster",
+	Callback = function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 1)
+	end,
+})
+
+TpTab:CreateButton({
+	Name = "Tp to Final Gaster",
+	Callback = function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.FinalGasterWarp, 1)
+	end,
+})
+
+TPTab:CreateButton({
+	Name = "Tp to UF Asgore",
+	Callback = function()
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
+        wait(0.1)
+        firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 1)
+	end,
+})
