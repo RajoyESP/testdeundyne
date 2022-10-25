@@ -101,7 +101,7 @@ TpTab:CreateButton({
 })
 
 TpTab:CreateButton({
-	Name = "Tp to Final Gaster",
+	Name = "Tp to Undyne",
 	Callback = function()
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.Warps.UndyneWarp, 0)
         wait(0.1)
@@ -118,7 +118,7 @@ TpTab:CreateButton({
 	end,
 })
 
-TPTab:CreateButton({
+TpTab:CreateButton({
 	Name = "Tp to UF Asgore",
 	Callback = function()
         firetouchinterest(game.Players.LocalPlayer.Character["Left Leg"], workspace.UnderFellMap.FellAsgoreWarp, 0)
