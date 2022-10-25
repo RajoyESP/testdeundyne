@@ -130,7 +130,7 @@ TpTab:CreateButton({
 })
 
 TpTab:CreateButton({
-	Name = "Tp to UF Asgore",
+	Name = "Tp to Error Sans",
 	Callback = function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15799.9219, 25861.7676, 575.419556)
 	end,
