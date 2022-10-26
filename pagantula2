@@ -1,10 +1,25 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
-local Window = Rayfield:CreateWindow({Name = "Undertale 3D Boss Battle"})
+Window = Rayfield:CreateWindow({
+    Name = "Undertale 3D Boss Battle",
+    LoadingTitle = "Pacote Interface Suite",
+    LoadingSubtitle = "by Paquito",
+    ConfigurationSaving = {
+        Enabled = true,
+        FileName = "Tiny Hub",
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+        Title = "Pacote's Hub",
+        Subtitle = "Key System",
+        Note = "Pon la password pibe",
+        Key = "porronchochico"
+    }
+    })
 
-local MainTab = Window:CreateTab("Main")
+MainTab = Window:CreateTab("Main")
 
-local TpTab = Window:CreateTab("Tps")
+TpTab = Window:CreateTab("Tps")
 
 getgenv().autofood = true;
 getgenv().autograbpumpkin = true;
