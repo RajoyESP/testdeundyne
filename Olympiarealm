@@ -28,6 +28,7 @@ function autodrink()
         while getgenv().autoheal == true do
             game:GetService("ReplicatedStorage").Remotes.EnergyFatigue.ServerRegen:FireServer() -- Curar Energy
             wait()
+	end
     end)
 end
 
