@@ -42,6 +42,7 @@ function autotrainformoney()
                     fireproximityprompt(v.ProximityPrompt)
                 end
             end
+            wait()
         end
     end)
 end
