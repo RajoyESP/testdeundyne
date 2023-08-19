@@ -16,7 +16,7 @@ Window = Rayfield:CreateWindow({
         Key = "hola"
     }
     })
-
+--Changed sum
 MainTab = Window:CreateTab("Main")
 TpTab = Window:CreateTab("Tps")
 
@@ -28,7 +28,7 @@ function autodrink()
         while getgenv().autoheal == true do
             game:GetService("ReplicatedStorage").Remotes.EnergyFatigue.ServerRegen:FireServer() -- Curar Energy
             wait()
-	end
+        end
     end)
 end
 
@@ -152,7 +152,7 @@ TpTab:CreateButton({
         for i,v in pairs(game:GetService("Workspace").Maquinas.Peck:GetDescendants()) do
             if v.Name == "SupinoSeat" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame -- Poner la localizacion del jugador como la del banco de press de banca
-                wait()
+                wait(0.5)
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
@@ -169,7 +169,7 @@ TpTab:CreateButton({
         for i,v in pairs(game:GetService("Workspace").Maquinas.Back:GetDescendants()) do
             if v.Name == "RemadaBarra" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Seat.CFrame -- Poner la localizacion del jugador como la del banco de press de banca
-                wait()
+                wait(0.5)
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
@@ -186,7 +186,7 @@ TpTab:CreateButton({
         for i,v in pairs(game:GetService("Workspace").Maquinas.Triceps:GetDescendants()) do
             if v.Name == "ExtTriceps" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Seat.CFrame -- Poner la localizacion del jugador como la del banco de press de banca
-                wait()
+                wait(0.5)
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
@@ -203,7 +203,7 @@ TpTab:CreateButton({
         for i,v in pairs(game:GetService("Workspace").Maquinas.Biceps:GetDescendants()) do
             if v.Name == "RoscaDcomBarra" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Seat.CFrame -- Poner la localizacion del jugador como la del banco de press de banca
-                wait()
+                wait(0.5)
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
@@ -220,7 +220,7 @@ TpTab:CreateButton({
         for i,v in pairs(game:GetService("Workspace").Maquinas.Core:GetDescendants()) do
             if v.Name == "AbMaquina" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Seat.CFrame -- Poner la localizacion del jugador como la del banco de press de banca
-                wait()
+                wait(0.5)
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
@@ -237,7 +237,7 @@ TpTab:CreateButton({
         for i,v in pairs(game:GetService("Workspace").Maquinas.Leg:GetDescendants()) do
             if v.Name == "Deadlift" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Seat.CFrame -- Poner la localizacion del jugador como la del banco de press de banca
-                wait()
+                wait(0.5)
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
