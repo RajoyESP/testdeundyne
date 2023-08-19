@@ -19,15 +19,26 @@ Window = Rayfield:CreateWindow({
 --Changed sum
 MainTab = Window:CreateTab("Main")
 TpTab = Window:CreateTab("Tps")
+MoneyTab = Window:CreateTab("Money")
 
 getgenv().autotrain = true;
 getgenv().autoheal = true;
+getgenv().autotrainmoney = true;
 
 function autodrink()
     spawn(function()
         while getgenv().autoheal == true do
             game:GetService("ReplicatedStorage").Remotes.EnergyFatigue.ServerRegen:FireServer() -- Curar Energy
             wait()
+        end
+    end)
+end
+
+function autotrainformoney()
+    spawn(function()
+        for i,v in pairs(game:GetService("Workspace").MaquinasProva.Sups:GetDescendants()) do
+            if v.Name == "SupinoSeat" then
+                fireproximityprompt(v.ProximityPrompt)
         end
     end)
 end
@@ -237,6 +248,49 @@ TpTab:CreateButton({
         for i,v in pairs(game:GetService("Workspace").Maquinas.Leg:GetDescendants()) do
             if v.Name == "Deadlift" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Seat.CFrame -- Poner la localizacion del jugador como la del banco de press de banca
+                wait(0.5)
+                game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
+                game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
+                game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
+                game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
+                game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
+                game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
+            end
+        end
+	end,
+})
+TpTab:CreateButton({
+	Name = "Tp to Shop1",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278.389496, 18.237299, -231.424652)
+	end,
+})
+TpTab:CreateButton({
+	Name = "Tp to Shop2",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-332.597107, 18.599577, -596.377014)
+	end,
+})
+TpTab:CreateButton({
+	Name = "Tp to Money Park",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-219.714066, 16.34375, -579.035583)
+	end,
+})
+MoneyTab:CreateToggle({
+	Name = "Auto Train For Money",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autotrainmoney = Value
+        autotrainformoney()
+	end,
+})
+MoneyTab:CreateButton({
+	Name = "Tp to Bench Press for Money",
+	Callback = function()
+        for i,v in pairs(game:GetService("Workspace").MaquinasProva:GetDescendants()) do
+            if v.Name == "SupinoSeat" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame -- Poner la localizacion del jugador como la del banco de press de banca
                 wait(0.5)
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
                 game:GetService("ReplicatedStorage").Pesos.AddPesos.AddTwentyFiveTon:FireServer() -- Equipar pesa de 25T
