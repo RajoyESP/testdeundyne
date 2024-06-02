@@ -125,6 +125,24 @@ function SendMessageEMBED(url, embed)
     print("Sent")
 end
 
+
+local embed = {
+    ["title"] = "Got a Tier math.huge stand!!",
+    ["description"] = "Que suerte joder",
+    ["type"] = "rich",
+    ["color"] = 65280,
+    ["fields"] = {
+        {
+            ["name"] = "Stand:",
+            ["value"] = game.Players.LocalPlayer.Name.." got "..game.Players.LocalPlayer.Stand.Value,
+            ["inline"] = true,
+        }
+    },
+    ["footer"] = {
+        ["text"] = "Ahora paga"
+    }
+}
+
 local url = "https://discord.com/api/webhooks/1246749142827405353/O_duHz6PfBVTIm0ogIL8mCg1boGH991UsdmS4cCKdCC4TvM1jJMJAJrG9wmno02pZkVX" --Webhook URL
 
 function autoluckystandroller() --Auto Roll for stands (with Lucky Arrow)
@@ -136,24 +154,7 @@ function autoluckystandroller() --Auto Roll for stands (with Lucky Arrow)
             wait(0.5)
             for i,v in target do
                 if game.Players.LocalPlayer.Stand.Value == v then
-
-                    local embed = {
-                        ["title"] = "Got a Tier math.huge stand!!",
-                        ["description"] = "Que suerte joder",
-                        ["type"] = "rich",
-                        ["color"] = 65280,
-                        ["fields"] = {
-                            {
-                                ["name"] = "Stand:",
-                                ["value"] = game.Players.LocalPlayer.Name.." got "..v,
-                                ["inline"] = true,
-                            }
-                        },
-                        ["footer"] = {
-                            ["text"] = "Ahora paga"
-                        }
-                    }
-
+                    wait(0.5)
                     SendMessageEMBED(url, embed)
                     error("Done")
                 return end
@@ -171,24 +172,7 @@ function autostandroller() --Auto Roll for stands (with Normal Arrow)
             wait(0.25)
             for i,v in target do
                 if game.Players.LocalPlayer.Stand.Value == v then
-
-                    local embed = {
-                        ["title"] = "Got a Tier math.huge stand!!",
-                        ["description"] = "Que suerte joder",
-                        ["type"] = "rich",
-                        ["color"] = 65280,
-                        ["fields"] = {
-                            {
-                                ["name"] = "Stand:",
-                                ["value"] = game.Players.LocalPlayer.Name.." got "..v,
-                                ["inline"] = true,
-                            }
-                        },
-                        ["footer"] = {
-                            ["text"] = "Ahora paga"
-                        }
-                    }
-
+                    wait(0.5)
                     SendMessageEMBED(url, embed)
                     error("Done")
                 return end
