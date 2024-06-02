@@ -183,9 +183,8 @@ MainTab:CreateButton({
         if #players > 2 then
             warn("Warning","Dupe function,only can be used in Private Servers with max of 2 players on it",5)
         else
-            local plr = game.Players.LocalPlayer
             while wait(.001) do
-                game.ReplicatedStorage.Specials.emeraldsplash:FireServer(plr.Character.HumanoidRootPart.CFrame, plr.Character.HumanoidRootPart.CFrame, 5, 3.5, plr.Character.Torso.voiceline, false, false)
+                game.ReplicatedStorage.Specials.emeraldsplash:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, 5, 3.5, game.Players.LocalPlayer.Character.Torso.voiceline, false, false)
             end
         end
 	end,
