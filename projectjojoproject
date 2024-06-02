@@ -104,12 +104,12 @@ function autostandroller() --Auto Roll for stands (with Normal Arrow)
             roka()
             worth()
             normalstand()
-            wait(0.5)
             for i,v in target do
                 if game.Players.LocalPlayer.Stand.Value == v then
                     error("Done")
                 return end
             end
+            wait()
         end
     end)
 end
