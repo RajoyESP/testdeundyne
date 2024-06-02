@@ -82,6 +82,54 @@ local function worth() --Worth farm
     until game.Players.LocalPlayer.Worth.Value == 100
 end
 
+
+function SendMessageEMBED(url, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+local url = "https://discord.com/api/webhooks/1246749142827405353/O_duHz6PfBVTIm0ogIL8mCg1boGH991UsdmS4cCKdCC4TvM1jJMJAJrG9wmno02pZkVX" --Webhook URL
+
+local embed = {
+    ["title"] = "Got a Tier math.huge stand!!",
+    ["description"] = "Que suerte joder",
+    ["type"] = "rich",
+    ["color"] = 65280,
+    ["fields"] = {
+        {
+            ["name"] = "Stand:",
+            ["value"] = game.Players.LocalPlayer.Name.." got "..game.Players.LocalPlayer.Stand.Value,
+            ["inline"] = true,
+        }
+    },
+    ["footer"] = {
+        ["text"] = "Ahora paga"
+    }
+}
+
 function autoluckystandroller() --Auto Roll for stands (with Lucky Arrow)
     spawn(function()
         while getgenv().autoluckystandroll == true do
@@ -91,6 +139,7 @@ function autoluckystandroller() --Auto Roll for stands (with Lucky Arrow)
             wait(0.5)
             for i,v in target do
                 if game.Players.LocalPlayer.Stand.Value == v then
+                    SendMessageEMBED(url, embed)
                     error("Done")
                 return end
             end
@@ -104,9 +153,10 @@ function autostandroller() --Auto Roll for stands (with Normal Arrow)
             roka()
             worth()
             normalstand()
-            wait()
+            wait(0.25)
             for i,v in target do
                 if game.Players.LocalPlayer.Stand.Value == v then
+                    SendMessageEMBED(url, embed)
                     error("Done")
                 return end
             end
