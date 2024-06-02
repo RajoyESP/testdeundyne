@@ -1,0 +1,148 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+Window = Rayfield:CreateWindow({
+    Name = "Project Jojo - Stand Farm",
+    LoadingTitle = "Pacote Interface Suite",
+    LoadingSubtitle = "by AverageMumuPlayer12User",
+    ConfigurationSaving = {
+        Enabled = true,
+        FileName = "Tiny Hub",
+    },
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+        Title = "Pacote's Hub",
+        Subtitle = "Key System",
+        Note = "Pon la password pibe",
+        Key = "juanpedroysubreak"
+    }
+    })
+
+MainTab = Window:CreateTab("Main")
+
+--Auto ON/OFF (leave as it is)
+getgenv().autoluckystandroll = true;
+getgenv().autostandroll = true;
+
+--Prefered Stands
+target = {
+    "GoldExperience",
+    "KillerQueen",
+    "Cream",
+    "Tusk1",
+    "D4C",
+    "TheWorldAlternateUniverse",
+    "StarPlatinumPrime",
+    "WhiteSnake",
+    "StarSpangledBanner",
+    "KingCrimson",
+    "GuestPlatinum",
+    "WonderOfU"
+}
+
+local function fastkill(humanoid) --Kill any Dummy function
+    game.ReplicatedStorage.Specials.healevent:FireServer(CFrame.new(), 1e12, humanoid, workspace:FindFirstChildOfClass("Sound"), false)
+    game.ReplicatedStorage.Logic.hitbox:InvokeServer(99, game.Players.LocalPlayer.Character.Head, CFrame.new(), 1e12, workspace:FindFirstChildOfClass("Sound"), humanoid, false, false, false)
+end
+
+local function roka() --Roka
+    game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+    repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("RokakakaFruit")
+    game.Players.LocalPlayer.Backpack.RokakakaFruit.Parent = game.Players.LocalPlayer.Character
+    game.Players.LocalPlayer.Character.Humanoid.Health = 90
+    game.ReplicatedStorage.Logic.fruitevent:InvokeServer(game.Players.LocalPlayer.Character.RokakakaFruit, game.Players.LocalPlayer.Character, 2)
+    repeat wait() until game.Players.LocalPlayer.Stand.Value == "None" and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and game.Players.LocalPlayer.Character.Humanoid.Health == game.Players.LocalPlayer.Character.Humanoid.MaxHealth
+end
+
+local function luckystand() --Lucky Arrow
+    game.ReplicatedStorage.Logic.giveitem:FireServer("LuckyStandArrow")
+    repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("LuckyStandArrow")
+    game.Players.LocalPlayer.Backpack.LuckyStandArrow.Parent = game.Players.LocalPlayer.Character
+    game.Players.LocalPlayer.Character.Humanoid.Health = 90
+    game.ReplicatedStorage.Logic.luckyarrowevent:InvokeServer(game.Players.LocalPlayer.Character.LuckyStandArrow, game.Players.LocalPlayer.Character, 0)
+    repeat wait() until game.Players.LocalPlayer.Stand.Value ~= "None" and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and game.Players.LocalPlayer.Character.Humanoid.Health == game.Players.LocalPlayer.Character.Humanoid.MaxHealth
+end
+
+local function normalstand() --Normal Arrow
+    game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+    repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("StandArrow")
+    game.Players.LocalPlayer.Backpack.StandArrow.Parent = game.Players.LocalPlayer.Character
+    game.Players.LocalPlayer.Character.Humanoid.Health = 90
+    game.ReplicatedStorage.Logic.arrowevent:InvokeServer(game.Players.LocalPlayer.Character.StandArrow, game.Players.LocalPlayer.Character, 0)
+    repeat wait() until game.Players.LocalPlayer.Stand.Value ~= "None" and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and game.Players.LocalPlayer.Character.Humanoid.Health == game.Players.LocalPlayer.Character.Humanoid.MaxHealth
+end
+
+local function worth() --Worth farm
+    repeat
+    wait()
+    fastkill(workspace["Holy Dummy"].Humanoid)
+    until game.Players.LocalPlayer.Worth.Value == 100
+end
+
+function autoluckystandroller() --Auto Roll for stands (with Lucky Arrow)
+    spawn(function()
+        while getgenv().autoluckystandroll == true do
+            roka()
+            worth()
+            luckystand()
+            wait(0.5)
+            for i,v in target do
+                if game.Players.LocalPlayer.Stand.Value == v then
+                    error("Done")
+                return end
+            end
+        end
+    end)
+end
+
+function autostandroller() --Auto Roll for stands (with Normal Arrow)
+    spawn(function()
+        while getgenv().autostandroll == true do
+            roka()
+            worth()
+            normalstand()
+            wait(0.5)
+            for i,v in target do
+                if game.Players.LocalPlayer.Stand.Value == v then
+                    error("Done")
+                return end
+            end
+        end
+    end)
+end
+
+--Toggle the funtion ON/OFF
+MainTab:CreateToggle({
+	Name = "Auto Roll Stands (Lucky Arrow)",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autoluckystandroll = Value
+        autoluckystandroller()
+	end,
+})
+MainTab:CreateToggle({
+	Name = "Auto Roll Stands (Normal Arrow)",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autostandroll = Value
+        autostandroller()
+	end,
+})
+
+--TP to the other city
+MainTab:CreateButton({
+	Name = "Tp the other city",
+	Callback = function()
+        fireclickdetector(workspace.Map.Train.ClickDetector)
+	end,
+})
+
+local worthlabel = MainTab:CreateLabel("Worth : " .. game.Players.LocalPlayer.Worth.Value)
+local standlabel = MainTab:CreateLabel("Stand : ".. game.Players.LocalPlayer.Stand.Value)
+
+game.Players.LocalPlayer.Stand.Changed:Connect(function()
+    standlabel:Set("Stand : ".. game.Players.LocalPlayer.Stand.Value)
+end)
+
+game.Players.LocalPlayer.Worth.Changed:Connect(function()
+    worthlabel:Set("Worth : " .. game.Players.LocalPlayer.Worth.Value)
+end)
