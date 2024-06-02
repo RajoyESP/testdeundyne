@@ -22,6 +22,7 @@ MainTab = Window:CreateTab("Main")
 --Auto ON/OFF (leave as it is)
 getgenv().autoluckystandroll = true;
 getgenv().autostandroll = true;
+getgenv().autokilldiav = true;
 
 --Prefered Stands
 target = {
@@ -110,6 +111,19 @@ function autostandroller() --Auto Roll for stands (with Normal Arrow)
     end)
 end
 
+function autokilldiavoloda() --Auto kill Diavolo
+    spawn(function()
+        while getgenv().autokilldiav == true do
+            for _,v in pairs(workspace:GetChildren()) do 
+                if v:FindFirstChild("Humanoid") and v.Name == "Diavolo" then
+                game:GetService("ReplicatedStorage").Logic.hitbox:InvokeServer(0,game.Players.LocalPlayer.Character["Right Arm"],CFrame.new(0,0,0),math.huge,game.Players.LocalPlayer.Character.Torso.voiceline,v:FindFirstChild("Humanoid"))
+                end
+            end
+            wait()
+        end
+    end)
+end
+
 --Toggle the funtion ON/OFF
 MainTab:CreateToggle({
 	Name = "Auto Roll Stands (Lucky Arrow)",
@@ -125,6 +139,14 @@ MainTab:CreateToggle({
 	Callback = function(Value)
         getgenv().autostandroll = Value
         autostandroller()
+	end,
+})
+MainTab:CreateToggle({
+	Name = "Auto Kill Diavolo",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autokilldiav = Value
+        autokilldiavoloda()
 	end,
 })
 
@@ -152,6 +174,20 @@ MainTab:CreateButton({
 	Name = "Tp the other city",
 	Callback = function()
         fireclickdetector(workspace.Map.Train.ClickDetector)
+	end,
+})
+
+MainTab:CreateButton({
+	Name = "Dupe??",
+	Callback = function()
+        if #players > 2 then
+            warn("Warning","Dupe function,only can be used in Private Servers with max of 2 players on it",5)
+        else
+            local plr = game.Players.LocalPlayer
+            while wait(.001) do
+                game.ReplicatedStorage.Specials.emeraldsplash:FireServer(plr.Character.HumanoidRootPart.CFrame, plr.Character.HumanoidRootPart.CFrame, 5, 3.5, plr.Character.Torso.voiceline, false, false)
+            end
+        end
 	end,
 })
 
