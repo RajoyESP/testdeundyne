@@ -1,4 +1,4 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 Window = Rayfield:CreateWindow({
     Name = "Project Jojo - Stand Farm",
@@ -8,7 +8,7 @@ Window = Rayfield:CreateWindow({
         Enabled = true,
         FileName = "Tiny Hub",
     },
-    KeySystem = true, -- Set this to true to use our key system
+    KeySystem = false, -- Set this to true to use our key system
     KeySettings = {
         Title = "Pacote's Hub",
         Subtitle = "Key System",
@@ -135,3 +135,14 @@ MainTab:CreateButton({
         fireclickdetector(workspace.Map.Train.ClickDetector)
 	end,
 })
+
+local worthlabel = MainTab:CreateLabel("Worth : " .. game.Players.LocalPlayer.Worth.Value)
+local standlabel = MainTab:CreateLabel("Stand : ".. game.Players.LocalPlayer.Stand.Value)
+
+game.Players.LocalPlayer.Stand.Changed:Connect(function()
+    standlabel:Set("Stand : ".. game.Players.LocalPlayer.Stand.Value)
+end)
+
+game.Players.LocalPlayer.Worth.Changed:Connect(function()
+    worthlabel:Set("Worth : " .. game.Players.LocalPlayer.Worth.Value)
+end)
