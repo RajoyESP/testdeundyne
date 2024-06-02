@@ -37,7 +37,6 @@ target = {
     "TheWorldAlternateUniverse",
     "StarPlatinumPrime",
     "WhiteSnake",
-    "Star-SpangledBanner",
     "KingCrimson",
     "GuestPlatinum",
     "WonderOfU"
@@ -154,7 +153,7 @@ function autoluckystandroller() --Auto Roll for stands (with Lucky Arrow)
             wait(0.5)
             for i,v in target do
                 if game.Players.LocalPlayer.Stand.Value == v then
-                    wait(0.5)
+                    wait(2.5)
                     SendMessageEMBED(url, embed)
                     error("Done")
                 return end
@@ -169,10 +168,10 @@ function autostandroller() --Auto Roll for stands (with Normal Arrow)
             roka()
             worth()
             normalstand()
-            wait(0.25)
+            wait(0.5)
             for i,v in target do
                 if game.Players.LocalPlayer.Stand.Value == v then
-                    wait(0.5)
+                    wait(2.5)
                     SendMessageEMBED(url, embed)
                     error("Done")
                 return end
