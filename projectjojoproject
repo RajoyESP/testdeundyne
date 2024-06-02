@@ -23,6 +23,9 @@ MainTab = Window:CreateTab("Main")
 getgenv().autoluckystandroll = true;
 getgenv().autostandroll = true;
 getgenv().autokilldiav = true;
+getgenv().autokilldio = true;
+getgenv().autokillkira = true;
+getgenv().autokillnotorious = true;
 
 --Prefered Stands
 target = {
@@ -124,6 +127,45 @@ function autokilldiavoloda() --Auto kill Diavolo
     end)
 end
 
+function autokillyoshikage() --Auto kill Kira
+    spawn(function()
+        while getgenv().autokillkira == true do
+            for _,v in pairs(workspace:GetChildren()) do 
+                if v:FindFirstChild("Humanoid") and v.Name == "Kira" then
+                game:GetService("ReplicatedStorage").Logic.hitbox:InvokeServer(0,game.Players.LocalPlayer.Character["Right Arm"],CFrame.new(0,0,0),math.huge,game.Players.LocalPlayer.Character.Torso.voiceline,v:FindFirstChild("Humanoid"))
+                end
+            end
+            wait()
+        end
+    end)
+end
+
+function autokilldiooh() --Auto kill DIO
+    spawn(function()
+        while getgenv().autokilldio == true do
+            for _,v in pairs(workspace:GetChildren()) do 
+                if v:FindFirstChild("Humanoid") and v.Name == "DIO" then
+                game:GetService("ReplicatedStorage").Logic.hitbox:InvokeServer(0,game.Players.LocalPlayer.Character["Right Arm"],CFrame.new(0,0,0),math.huge,game.Players.LocalPlayer.Character.Torso.voiceline,v:FindFirstChild("Humanoid"))
+                end
+            end
+            wait()
+        end
+    end)
+end
+
+function autokillbignot() --Auto kill Notorious
+    spawn(function()
+        while getgenv().autokillnotorious == true do
+            for _,v in pairs(workspace:GetChildren()) do 
+                if v:FindFirstChild("Humanoid") and v.Name == "Notorious B.I.G" then
+                game:GetService("ReplicatedStorage").Logic.hitbox:InvokeServer(0,game.Players.LocalPlayer.Character["Right Arm"],CFrame.new(0,0,0),math.huge,game.Players.LocalPlayer.Character.Torso.voiceline,v:FindFirstChild("Humanoid"))
+                end
+            end
+            wait()
+        end
+    end)
+end
+
 --Toggle the funtion ON/OFF
 MainTab:CreateToggle({
 	Name = "Auto Roll Stands (Lucky Arrow)",
@@ -147,6 +189,30 @@ MainTab:CreateToggle({
 	Callback = function(Value)
         getgenv().autokilldiav = Value
         autokilldiavoloda()
+	end,
+})
+MainTab:CreateToggle({
+	Name = "Auto Kill Kira",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autokillkira = Value
+        autokillyoshikage()
+	end,
+})
+MainTab:CreateToggle({
+	Name = "Auto Kill DIO",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autokilldio = Value
+        autokilldiooh()
+	end,
+})
+MainTab:CreateToggle({
+	Name = "Auto Kill Notorious B.I.G",
+	CurrentValue = false,
+	Callback = function(Value)
+        getgenv().autokillnotorious = Value
+        autokillbignot()
 	end,
 })
 
@@ -177,18 +243,18 @@ MainTab:CreateButton({
 	end,
 })
 
-MainTab:CreateButton({
-	Name = "Dupe??",
-	Callback = function()
-        if #players > 2 then
-            warn("Warning","Dupe function,only can be used in Private Servers with max of 2 players on it",5)
-        else
-            while wait(.001) do
-                game.ReplicatedStorage.Specials.emeraldsplash:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, 5, 3.5, game.Players.LocalPlayer.Character.Torso.voiceline, false, false)
-            end
-        end
-	end,
-})
+-- MainTab:CreateButton({
+-- 	Name = "Dupe??",
+-- 	Callback = function()
+--         if #players > 2 then
+--             warn("Warning","Dupe function,only can be used in Private Servers with max of 2 players on it",5)
+--         else
+--             while wait(.001) do
+--                 game.ReplicatedStorage.Specials.emeraldsplash:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, 5, 3.5, game.Players.LocalPlayer.Character.Torso.voiceline, false, false)
+--             end
+--         end
+-- 	end,
+-- })
 
 local worthlabel = MainTab:CreateLabel("Worth : " .. game.Players.LocalPlayer.Worth.Value)
 local standlabel = MainTab:CreateLabel("Stand : ".. game.Players.LocalPlayer.Stand.Value)
