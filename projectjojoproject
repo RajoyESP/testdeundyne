@@ -83,6 +83,20 @@ local function worth() --Worth farm
 end
 
 
+function itemget(target)
+    local item = workspace:WaitForChild(target)
+    if item then
+        local player = game.Players.LocalPlayer.Character.HumanoidRootPart
+        x = player.Position.X
+        y = player.Position.Y
+        z = player.Position.Z
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = item.Handle.CFrame
+        wait(.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x,y,z)
+        check(target)
+    end
+end
+
 function SendMessageEMBED(url, embed)
     local http = game:GetService("HttpService")
     local headers = {
@@ -284,6 +298,37 @@ MainTab:CreateToggle({
         autokillbignot()
 	end,
 })
+
+MainTab:CreateToggle({
+	Name = "Auto LF Aja Mask",
+	CurrentValue = false,
+	Callback = function(Value)
+        while Value == true do
+            itemget("AjaMask")
+        end
+	end,
+})
+
+MainTab:CreateToggle({
+	Name = "Auto LF Red Aja",
+	CurrentValue = false,
+	Callback = function(Value)
+        while Value == true do
+            itemget("RedAja")
+        end
+	end,
+})
+
+MainTab:CreateToggle({
+	Name = "Auto LF Vampire Mask",
+	CurrentValue = false,
+	Callback = function(Value)
+        while Value == true do
+            itemget("VampireMask")
+        end
+	end,
+})
+
 
 --Toggle AFK Mode
 local AFKToggle = MainTab:CreateToggle({
