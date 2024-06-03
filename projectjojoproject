@@ -18,6 +18,8 @@ Window = Rayfield:CreateWindow({
     })
 
 MainTab = Window:CreateTab("Main")
+BossTab = Window:CreateTab("Bosses")
+ItemTab = Window:CreateTab("Items")
 
 --Auto ON/OFF (leave as it is)
 getgenv().autoluckystandroll = true;
@@ -266,7 +268,7 @@ MainTab:CreateToggle({
         autostandroller()
 	end,
 })
-MainTab:CreateToggle({
+BossTab:CreateToggle({
 	Name = "Auto Kill Diavolo",
 	CurrentValue = false,
 	Callback = function(Value)
@@ -274,7 +276,7 @@ MainTab:CreateToggle({
         autokilldiavoloda()
 	end,
 })
-MainTab:CreateToggle({
+BossTab:CreateToggle({
 	Name = "Auto Kill Kira",
 	CurrentValue = false,
 	Callback = function(Value)
@@ -282,7 +284,7 @@ MainTab:CreateToggle({
         autokillyoshikage()
 	end,
 })
-MainTab:CreateToggle({
+BossTab:CreateToggle({
 	Name = "Auto Kill DIO",
 	CurrentValue = false,
 	Callback = function(Value)
@@ -290,7 +292,7 @@ MainTab:CreateToggle({
         autokilldiooh()
 	end,
 })
-MainTab:CreateToggle({
+BossTab:CreateToggle({
 	Name = "Auto Kill Notorious B.I.G",
 	CurrentValue = false,
 	Callback = function(Value)
@@ -299,7 +301,7 @@ MainTab:CreateToggle({
 	end,
 })
 
-MainTab:CreateToggle({
+ItemTab:CreateToggle({
 	Name = "Auto LF Aja Mask",
 	CurrentValue = false,
 	Callback = function(Value)
@@ -309,7 +311,7 @@ MainTab:CreateToggle({
 	end,
 })
 
-MainTab:CreateToggle({
+ItemTab:CreateToggle({
 	Name = "Auto LF Red Aja",
 	CurrentValue = false,
 	Callback = function(Value)
@@ -319,12 +321,22 @@ MainTab:CreateToggle({
 	end,
 })
 
-MainTab:CreateToggle({
+ItemTab:CreateToggle({
 	Name = "Auto LF Vampire Mask",
 	CurrentValue = false,
 	Callback = function(Value)
         while Value == true do
             itemget("VampireMask")
+        end
+	end,
+})
+
+ItemTab:CreateToggle({
+	Name = "Auto LF Requiem Arrow",
+	CurrentValue = false,
+	Callback = function(Value)
+        while Value == true do
+            itemget("RequiemArrow")
         end
 	end,
 })
